@@ -7,32 +7,35 @@
 <meta name="description" content="Portail officiel de vérification des cartes digitales sanitaires — Oomus DPI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Favicon Oomus — remplacer par le vrai fichier favicon.ico dans gh-pages/ -->
+<link rel="icon" type="image/svg+xml" href="https://images.prismic.io/ramatouexpress/acGKQ5GXnQHGY3xd_icon_oomus.png?auto=format,compress">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <style>
 /* ═══════════════════════════════════════════════
    TOKENS
 ═══════════════════════════════════════════════ */
 :root {
-  --bg:       #050A0F;
-  --bg2:      #090F16;
-  --bg3:      #0D1520;
-  --surface:  #111C2A;
-  --surface2: #162236;
-  --border:   rgba(255,255,255,0.07);
-  --border2:  rgba(255,255,255,0.12);
-  --cyan:     #00D4FF;
-  --cyan2:    #00AACC;
-  --cyan-dim: rgba(0,212,255,0.12);
-  --green:    #00E599;
-  --green-dim:rgba(0,229,153,0.12);
-  --red:      #FF4D6A;
-  --red-dim:  rgba(255,77,106,0.12);
-  --amber:    #FFB340;
-  --amber-dim:rgba(255,179,64,0.12);
-  --blue:     #4D9EFF;
-  --blue-dim: rgba(77,158,255,0.12);
-  --text:     rgba(255,255,255,0.92);
-  --text2:    rgba(255,255,255,0.55);
-  --text3:    rgba(255,255,255,0.30);
+  --bg:       #F0F2F5;
+  --bg2:      #E8EBF0;
+  --bg3:      #EAECF0;
+  --surface:  #FFFFFF;
+  --surface2: #F6F8FA;
+  --border:   rgba(0,0,0,0.08);
+  --border2:  rgba(0,0,0,0.13);
+  --cyan:     #08BCF1;
+  --cyan2:    #059DC5;
+  --cyan-dim: rgba(8,188,241,0.10);
+  --green:    #047857;
+  --green-dim:rgba(4,120,87,0.09);
+  --red:      #DC2626;
+  --red-dim:  rgba(220,38,38,0.09);
+  --amber:    #B45309;
+  --amber-dim:rgba(180,83,9,0.09);
+  --blue:     #1D4ED8;
+  --blue-dim: rgba(29,78,216,0.09);
+  --text:     #0F1729;
+  --text2:    #4B5563;
+  --text3:    #9CA3AF;
   --od: 'Onest', sans-serif;
   --ob: 'IBM Plex Sans', sans-serif;
   --om: 'IBM Plex Mono', monospace;
@@ -43,42 +46,14 @@ html{scroll-behavior:smooth}
 body{font-family:var(--ob);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 
 /* ═══════════════════════════════════════════════
-   AURORA BACKGROUND
+   BACKGROUND — fond clair professionnel
 ═══════════════════════════════════════════════ */
-.aurora {
-  position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
-}
-.aurora-blob {
-  position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;
-  animation:drift 12s ease-in-out infinite alternate;
-}
-.aurora-blob:nth-child(1){
-  width:600px;height:600px;top:-100px;left:-100px;
-  background:radial-gradient(circle,#00D4FF,transparent 70%);
-  animation-duration:14s;
-}
-.aurora-blob:nth-child(2){
-  width:500px;height:500px;bottom:-50px;right:-100px;
-  background:radial-gradient(circle,#00E599,transparent 70%);
-  animation-duration:10s;animation-delay:-5s;
-}
-.aurora-blob:nth-child(3){
-  width:400px;height:400px;top:40%;left:50%;transform:translateX(-50%);
-  background:radial-gradient(circle,#4D9EFF,transparent 70%);
-  animation-duration:18s;animation-delay:-8s;opacity:0.1;
-}
-@keyframes drift{
-  0%{transform:translate(0,0) scale(1);}
-  100%{transform:translate(40px,30px) scale(1.1);}
-}
-
-/* Grid overlay */
 body::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background-image:
-    linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
-  background-size:40px 40px;
+    linear-gradient(rgba(8,188,241,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(8,188,241,0.04) 1px,transparent 1px);
+  background-size:32px 32px;
 }
 
 /* ═══════════════════════════════════════════════
@@ -88,12 +63,13 @@ nav{
   position:sticky;top:0;z-index:100;
   border-bottom:1px solid var(--border);
   backdrop-filter:blur(20px);
-  background:rgba(5,10,15,0.8);
+  background:rgba(248,250,252,0.92);
 }
 .nav-i{
   max-width:1100px;margin:0 auto;padding:0 24px;
   display:flex;align-items:center;gap:16px;height:58px;
 }
+.nav-logo-img{height:32px;width:auto;object-fit:contain;filter:none;opacity:0.9}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .nav-mark{
   position:relative;width:34px;height:34px;
@@ -113,7 +89,7 @@ nav{
 @keyframes ring-spin{to{transform:rotate(360deg);}}
 .nav-mark-core{
   width:20px;height:20px;border-radius:50%;
-  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  background:#08BCF1;
   display:grid;place-items:center;
 }
 .nav-mark-core svg{width:10px;height:10px;fill:var(--bg)}
@@ -124,14 +100,15 @@ nav{
   margin-left:auto;
   font-family:var(--om);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--cyan);
-  border:1px solid rgba(0,212,255,0.3);
+  border:1px solid rgba(8,188,241,0.30);
+  background:rgba(8,188,241,0.08);
   padding:4px 12px;border-radius:4px;
   position:relative;overflow:hidden;
 }
 .nav-badge::before{
   content:'';position:absolute;top:0;left:-100%;
   width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
+  background:linear-gradient(90deg,transparent,rgba(8,188,241,0.12),transparent);
   animation:shimmer 3s infinite;
 }
 @keyframes shimmer{to{left:200%;}}
@@ -151,7 +128,7 @@ nav{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--om);font-size:10px;font-weight:500;
   letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);
-  background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.2);
+  background:var(--cyan-dim);border:1px solid rgba(8,188,241,0.20);
   padding:5px 12px;border-radius:4px;margin-bottom:20px;
 }
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease-in-out infinite}
@@ -172,38 +149,47 @@ nav{
 }
 .hero-sub{font-size:14px;color:var(--text2);line-height:1.7;max-width:460px}
 
-/* Hero visual */
-.hero-visual{flex-shrink:0;position:relative;width:140px;height:140px}
+/* Hero visual — animation QR scan */
+.hero-visual{flex-shrink:0;position:relative;width:160px;height:160px}
 @media(max-width:700px){.hero-visual{display:none}}
-.hv-ring-outer{
-  position:absolute;inset:0;border-radius:50%;
-  border:1px solid rgba(0,212,255,0.15);
-  animation:hv-spin 20s linear infinite;
+.qr-anim{width:160px;height:160px;display:block;border-radius:14px;
+  box-shadow:0 4px 32px rgba(8,188,241,0.12),0 1px 4px rgba(0,0,0,0.08);}
+
+/* Ligne de scan */
+.scan-line{
+  animation:scan-move 2.4s cubic-bezier(0.4,0,0.6,1) infinite;
 }
-.hv-ring-outer::before,.hv-ring-outer::after{
-  content:'';position:absolute;width:8px;height:8px;border-radius:50%;
-  background:var(--cyan);top:50%;transform:translateY(-50%);
+.scan-glow-rect{
+  animation:scan-move 2.4s cubic-bezier(0.4,0,0.6,1) infinite;
 }
-.hv-ring-outer::before{left:-4px}
-.hv-ring-outer::after{right:-4px;background:var(--blue)}
-.hv-ring-mid{
-  position:absolute;inset:16px;border-radius:50%;
-  border:1px solid rgba(0,229,153,0.15);
-  animation:hv-spin 12s linear infinite reverse;
+@keyframes scan-move{
+  0%  {transform:translateY(8px)}
+  50% {transform:translateY(140px)}
+  100%{transform:translateY(8px)}
 }
-.hv-ring-mid::before{
-  content:'';position:absolute;width:6px;height:6px;border-radius:50%;
-  background:var(--green);top:-3px;left:50%;transform:translateX(-50%);
+
+/* Hash qui défile */
+.hash-scroll{
+  animation:hash-cycle 3s steps(1) infinite;
 }
-@keyframes hv-spin{to{transform:rotate(360deg)}}
-.hv-core{
-  position:absolute;inset:32px;border-radius:50%;
-  background:linear-gradient(135deg,var(--surface),var(--surface2));
-  border:1px solid var(--border2);
-  display:grid;place-items:center;
-  box-shadow:0 0 40px rgba(0,212,255,0.1),inset 0 1px 0 rgba(255,255,255,0.08);
+@keyframes hash-cycle{
+  0%  {opacity:0.6}
+  33% {opacity:0.2}
+  66% {opacity:0.8}
+  100%{opacity:0.6}
 }
-.hv-icon{font-size:28px}
+
+/* Badge verified pulsant */
+.verified-badge{
+  animation:badge-appear 2.4s ease-in-out infinite;
+}
+@keyframes badge-appear{
+  0%  {opacity:0}
+  60% {opacity:0}
+  75% {opacity:1}
+  90% {opacity:1}
+  100%{opacity:0}
+}
 
 /* ═══════════════════════════════════════════════
    MAIN LAYOUT
@@ -224,21 +210,22 @@ nav{
   border:1px solid var(--border);
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 4px 24px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow:0 1px 4px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.08);
   margin-bottom:20px;
 }
 .panel-head{
-  padding:14px 18px;
+  padding:16px 20px;
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:10px;
 }
 .panel-head-label{
-  font-family:var(--om);font-size:10px;font-weight:500;
-  letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);
+  font-family:var(--od);font-size:13px;font-weight:700;
+  letter-spacing:-0.01em;color:var(--text);
 }
 .panel-head-dot{
-  width:6px;height:6px;border-radius:50%;
+  width:7px;height:7px;border-radius:50%;
   background:var(--cyan);margin-left:auto;
+  box-shadow:0 0 0 3px rgba(8,188,241,0.15);
   animation:pulse 2s ease-in-out infinite;
 }
 
@@ -246,84 +233,165 @@ nav{
    TABS
 ═══════════════════════════════════════════════ */
 .tabs{
-  display:flex;gap:0;margin:16px 18px 14px;
-  background:var(--bg3);border-radius:6px;padding:3px;
+  display:flex;gap:4px;margin:16px 18px 18px;
+  background:var(--bg3);border-radius:10px;padding:4px;
   border:1px solid var(--border);
 }
 .tab-btn{
-  flex:1;height:32px;background:transparent;border:none;
-  border-radius:4px;
-  font-family:var(--ob);font-size:12px;font-weight:500;color:var(--text3);
-  cursor:pointer;transition:all 0.15s;
-  display:flex;align-items:center;justify-content:center;gap:6px;
+  flex:1;height:36px;background:transparent;border:none;
+  border-radius:7px;
+  font-family:var(--od);font-size:12px;font-weight:600;color:var(--text3);
+  cursor:pointer;transition:all 0.18s;
+  display:flex;align-items:center;justify-content:center;gap:7px;
 }
-.tab-btn svg{width:12px;height:12px;flex-shrink:0}
-.tab-btn.active{background:var(--surface2);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.4)}
-.tab-btn:hover:not(.active){color:var(--text2)}
+.tab-btn svg{width:14px;height:14px;flex-shrink:0;transition:stroke 0.18s}
+.tab-btn.active{
+  background:var(--surface);color:var(--cyan);
+  box-shadow:0 1px 6px rgba(0,0,0,0.1),0 0 0 1px var(--border2);
+}
+.tab-btn.active svg{stroke:var(--cyan)}
+.tab-btn:hover:not(.active){color:var(--text2);background:rgba(0,0,0,0.03)}
 
 /* Tab panels */
 .tab-panel{display:none}.tab-panel.active{display:block}
 
 /* ═══════════════════════════════════════════════
-   SEARCH INPUT
+   CHAMP CODE — redesigné
 ═══════════════════════════════════════════════ */
-.input-row{display:flex;gap:8px;padding:0 18px 14px}
+.field-block{padding:0 18px 6px}
+.field-label{
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--od);font-size:11px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);
+  margin-bottom:8px;
+}
+.field-label svg{width:13px;height:13px;stroke:var(--cyan);flex-shrink:0}
+.input-wrap{
+  position:relative;display:flex;align-items:center;
+}
+.input-icon{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  pointer-events:none;
+  width:18px;height:18px;stroke:var(--text3);transition:stroke 0.15s;
+  flex-shrink:0;
+}
 .code-field{
-  flex:1;height:48px;
-  background:var(--bg3);
-  border:1px solid var(--border2);
-  border-radius:8px;
-  padding:0 16px;
-  font-family:var(--om);font-size:15px;font-weight:500;
-  letter-spacing:0.08em;color:var(--text);
-  outline:none;transition:border-color 0.15s,box-shadow 0.15s;
+  width:100%;height:52px;
+  background:var(--surface);
+  border:1.5px solid var(--border2);
+  border-radius:10px;
+  padding:0 16px 0 44px;
+  font-family:var(--om);font-size:15px;font-weight:600;
+  letter-spacing:0.1em;color:var(--text);
+  outline:none;transition:border-color 0.18s,box-shadow 0.18s;
   text-transform:uppercase;-webkit-appearance:none;
 }
-.code-field::placeholder{color:var(--text3);font-size:12px;letter-spacing:0.02em;text-transform:none;font-weight:400}
-.code-field:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,212,255,0.1)}
+.code-field::placeholder{
+  color:var(--text3);font-size:12px;letter-spacing:0.01em;
+  text-transform:none;font-weight:400;font-family:var(--ob);
+}
+.code-field:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 3px rgba(8,188,241,0.14);
+}
+.code-field:focus ~ .input-icon,
+.input-wrap:focus-within .input-icon{stroke:var(--cyan)}
+
 .btn-verify{
-  height:48px;padding:0 22px;
-  background:linear-gradient(135deg,var(--cyan),var(--blue));
-  color:var(--bg);border:none;border-radius:8px;
-  font-family:var(--od);font-size:13px;font-weight:700;letter-spacing:0.02em;
-  cursor:pointer;white-space:nowrap;
-  transition:opacity 0.15s,transform 0.1s,box-shadow 0.2s;
-  box-shadow:0 0 20px rgba(0,212,255,0.2);
+  margin:10px 18px 18px;
+  width:calc(100% - 36px);
+  height:50px;
+  background:var(--cyan);
+  color:#ffffff;border:none;border-radius:10px;
+  font-family:var(--od);font-size:14px;font-weight:700;letter-spacing:0.02em;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:all 0.18s;
+  box-shadow:0 2px 12px rgba(8,188,241,0.30);
 }
-.btn-verify:hover{opacity:0.9;box-shadow:0 0 32px rgba(0,212,255,0.35)}
-.btn-verify:active{transform:scale(0.97)}
-.btn-verify:disabled{background:var(--surface2);color:var(--text3);cursor:not-allowed;box-shadow:none}
+.btn-verify svg{width:18px;height:18px;stroke:white;flex-shrink:0}
+.btn-verify:hover{
+  background:#06A8D8;
+  box-shadow:0 4px 20px rgba(8,188,241,0.40);
+  transform:translateY(-1px);
+}
+.btn-verify:active{transform:scale(0.98);transform:translateY(0)}
+.btn-verify:disabled{
+  background:var(--bg3);color:var(--text3);
+  cursor:not-allowed;box-shadow:none;transform:none;
+}
+
 .input-hint{
-  padding:0 18px 14px;font-size:11px;color:var(--text3);
-  font-family:var(--om);border-top:1px solid var(--border);padding-top:10px;line-height:1.7;
+  margin:0 18px 16px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:10px 14px;
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:11px;color:var(--text3);font-family:var(--om);line-height:1.7;
 }
-.scan-row{padding:12px 18px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--border)}
+.input-hint-icon{
+  flex-shrink:0;margin-top:1px;
+  width:14px;height:14px;stroke:var(--text3);
+}
+
+.scan-row{
+  padding:0 18px 18px;
+  display:flex;align-items:center;gap:10px;
+}
 .btn-scan{
-  display:inline-flex;align-items:center;gap:7px;
-  height:34px;padding:0 14px;background:transparent;
-  border:1px solid var(--border2);border-radius:6px;
-  color:var(--text3);font-family:var(--ob);font-size:12px;font-weight:500;
-  cursor:pointer;transition:all 0.15s;
+  display:inline-flex;align-items:center;gap:8px;
+  height:38px;padding:0 16px;background:var(--surface);
+  border:1.5px solid var(--border2);border-radius:8px;
+  color:var(--text2);font-family:var(--od);font-size:12px;font-weight:600;
+  cursor:pointer;transition:all 0.18s;
+  box-shadow:0 1px 3px rgba(0,0,0,0.06);
 }
-.btn-scan:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim)}
-.btn-scan svg{width:13px;height:13px}
-.scan-hint{font-size:11px;color:var(--text3);font-family:var(--om)}
+.btn-scan svg{width:15px;height:15px;stroke:var(--text3);transition:stroke 0.18s;flex-shrink:0}
+.btn-scan:hover{
+  border-color:var(--cyan);color:var(--cyan);
+  background:rgba(8,188,241,0.06);
+  box-shadow:0 2px 8px rgba(8,188,241,0.15);
+}
+.btn-scan:hover svg{stroke:var(--cyan)}
+.scan-hint{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;color:var(--text3);font-family:var(--om);
+}
+.scan-hint svg{width:12px;height:12px;stroke:var(--text3);flex-shrink:0}
 
 /* ═══════════════════════════════════════════════
    BULK UPLOAD
 ═══════════════════════════════════════════════ */
 .drop-zone{
-  margin:0 18px 14px;
-  border:1.5px dashed var(--border2);border-radius:8px;
-  padding:28px 20px;text-align:center;cursor:pointer;
+  margin:0 18px 16px;
+  border:2px dashed var(--border2);border-radius:12px;
+  padding:32px 20px;text-align:center;cursor:pointer;
   transition:all 0.2s;background:var(--bg3);position:relative;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
 }
-.drop-zone:hover,.drop-zone.drag-over{border-color:var(--cyan);background:var(--cyan-dim)}
+.drop-zone:hover,.drop-zone.drag-over{
+  border-color:var(--cyan);background:rgba(8,188,241,0.05);
+}
 .drop-zone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.drop-icon{font-size:24px;margin-bottom:8px;display:block}
-.drop-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;font-family:var(--od)}
-.drop-hint{font-size:11px;color:var(--text3);font-family:var(--om);line-height:1.6}
-.drop-hint strong{color:var(--cyan)}
+
+.drop-svg-icon{
+  width:44px;height:44px;
+  background:rgba(8,188,241,0.10);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:4px;transition:background 0.2s;
+}
+.drop-zone:hover .drop-svg-icon{background:rgba(8,188,241,0.18)}
+.drop-svg-icon svg{width:22px;height:22px;stroke:var(--cyan)}
+
+.drop-title{font-size:13px;font-weight:700;color:var(--text);font-family:var(--od)}
+.drop-hint{font-size:11px;color:var(--text3);font-family:var(--om);line-height:1.6;text-align:center}
+.drop-hint strong{color:var(--cyan);font-weight:600}
+.drop-chips{display:flex;gap:6px;justify-content:center;margin-top:4px}
+.drop-chip{
+  font-family:var(--om);font-size:10px;font-weight:600;
+  color:var(--text3);background:var(--surface);
+  border:1px solid var(--border2);border-radius:4px;
+  padding:2px 8px;letter-spacing:0.04em;
+}
 
 /* Bulk progress */
 #bulk-progress{display:none;margin:0 18px 14px}
@@ -331,53 +399,60 @@ nav{
 .prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .prog-lbl{font-size:11px;font-weight:600;color:var(--text2);font-family:var(--om)}
 .prog-cnt{font-family:var(--om);font-size:11px;color:var(--text3)}
-.prog-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:2px;transition:width 0.1s linear;width:0%}
+.prog-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;border:1px solid var(--border)}
+.prog-fill{
+  height:100%;background:var(--cyan);
+  border-radius:2px;transition:width 0.1s linear;width:0%;
+}
 
 /* Bulk summary */
 #bulk-summary{display:none;margin:0 18px 14px}
 #bulk-summary.on{display:block}
 .bulk-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.bulk-badge{border-radius:8px;padding:10px 8px;text-align:center;border:1px solid var(--border)}
-.bulk-badge-n{font-family:var(--om);font-size:18px;font-weight:700;display:block;margin-bottom:2px}
-.bulk-badge-l{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--om)}
-.bb-tot{background:var(--bg3)}.bb-tot .bulk-badge-n{color:var(--text)}.bb-tot .bulk-badge-l{color:var(--text3)}
-.bb-ok{background:var(--green-dim);border-color:rgba(0,229,153,0.2)}.bb-ok .bulk-badge-n{color:var(--green)}.bb-ok .bulk-badge-l{color:var(--green)}
-.bb-wn{background:var(--amber-dim);border-color:rgba(255,179,64,0.2)}.bb-wn .bulk-badge-n{color:var(--amber)}.bb-wn .bulk-badge-l{color:var(--amber)}
-.bb-er{background:var(--red-dim);border-color:rgba(255,77,106,0.2)}.bb-er .bulk-badge-n{color:var(--red)}.bb-er .bulk-badge-l{color:var(--red)}
+.bulk-badge{
+  border-radius:10px;padding:12px 8px;text-align:center;
+  border:1px solid var(--border);background:var(--surface);
+}
+.bulk-badge-n{font-family:var(--om);font-size:20px;font-weight:700;display:block;margin-bottom:2px;line-height:1}
+.bulk-badge-l{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--om)}
+.bb-tot .bulk-badge-n{color:var(--text)}.bb-tot .bulk-badge-l{color:var(--text3)}
+.bb-ok{border-color:rgba(4,120,87,0.15);background:rgba(4,120,87,0.05)}.bb-ok .bulk-badge-n{color:var(--green)}.bb-ok .bulk-badge-l{color:var(--green)}
+.bb-wn{border-color:rgba(180,83,9,0.15);background:rgba(180,83,9,0.05)}.bb-wn .bulk-badge-n{color:var(--amber)}.bb-wn .bulk-badge-l{color:var(--amber)}
+.bb-er{border-color:rgba(220,38,38,0.15);background:rgba(220,38,38,0.05)}.bb-er .bulk-badge-n{color:var(--red)}.bb-er .bulk-badge-l{color:var(--red)}
 
 /* Bulk actions */
-.bulk-actions{display:flex;gap:8px;padding:0 18px 14px}
+.bulk-actions{display:flex;gap:8px;padding:0 18px 16px}
 .btn-export{
-  flex:1;height:36px;background:linear-gradient(135deg,var(--cyan),var(--blue));
-  color:var(--bg);border:none;border-radius:6px;
+  flex:1;height:40px;background:var(--cyan);
+  color:#fff;border:none;border-radius:8px;
   font-family:var(--od);font-size:12px;font-weight:700;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:6px;transition:opacity 0.15s;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  transition:all 0.15s;box-shadow:0 2px 8px rgba(8,188,241,0.25);
 }
-.btn-export:hover{opacity:0.85}
-.btn-export svg{width:13px;height:13px}
+.btn-export:hover{background:#06A8D8;box-shadow:0 4px 16px rgba(8,188,241,0.35)}
+.btn-export svg{width:14px;height:14px;stroke:#fff}
 .btn-reset{
-  height:36px;padding:0 14px;background:transparent;
-  border:1px solid var(--border2);border-radius:6px;
-  font-family:var(--ob);font-size:12px;font-weight:500;color:var(--text3);
+  height:40px;padding:0 16px;background:var(--surface);
+  border:1.5px solid var(--border2);border-radius:8px;
+  font-family:var(--od);font-size:12px;font-weight:600;color:var(--text2);
   cursor:pointer;transition:all 0.15s;
 }
-.btn-reset:hover{border-color:var(--text3);color:var(--text2)}
+.btn-reset:hover{border-color:var(--red);color:var(--red);background:rgba(220,38,38,0.04)}
 
 /* Bulk table */
-#bulk-table-wrap{display:none;margin:0 18px 14px;max-height:260px;overflow-y:auto;border:1px solid var(--border);border-radius:8px}
+#bulk-table-wrap{display:none;margin:0 18px 16px;max-height:260px;overflow-y:auto;border:1.5px solid var(--border);border-radius:10px}
 #bulk-table-wrap.on{display:block}
 .bulk-table{width:100%;border-collapse:collapse}
 .bulk-table thead th{
   position:sticky;top:0;z-index:1;
-  background:var(--bg3);padding:8px 10px;
-  font-family:var(--om);font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--text3);text-align:left;border-bottom:1px solid var(--border);
+  background:var(--bg3);padding:9px 12px;
+  font-family:var(--om);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text3);text-align:left;border-bottom:1.5px solid var(--border);
 }
 .bulk-table tbody tr+tr{border-top:1px solid var(--border)}
-.bulk-table tbody tr:hover{background:var(--surface2)}
-.bulk-table td{padding:7px 10px;font-size:11px;color:var(--text)}
-.bulk-table td.mono{font-family:var(--om);letter-spacing:0.04em}
+.bulk-table tbody tr:hover{background:rgba(8,188,241,0.04)}
+.bulk-table td{padding:8px 12px;font-size:11px;color:var(--text)}
+.bulk-table td.mono{font-family:var(--om);font-size:12px;font-weight:600;letter-spacing:0.06em}
 .bulk-table td.dim{color:var(--text3);font-family:var(--om);font-size:10px}
 
 /* ═══════════════════════════════════════════════
@@ -520,7 +595,7 @@ nav{
 .scan-box{
   background:var(--surface);border:1px solid var(--border2);border-radius:16px;
   padding:24px;width:340px;max-width:90vw;text-align:center;
-  box-shadow:0 24px 80px rgba(0,0,0,0.6);
+  box-shadow:0 8px 48px rgba(0,0,0,0.18);
   animation:pop 0.25s cubic-bezier(0.34,1.56,0.64,1);
 }
 @keyframes pop{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}
@@ -535,7 +610,7 @@ nav{
 .btn-close:hover{background:var(--surface2)}
 
 /* ═══════════════════════════════════════════════
-   FOOTER — Institutionnel technique Oomus
+   FOOTER — Logos institutionnels uniquement
 ═══════════════════════════════════════════════ */
 footer{
   position:relative;z-index:1;
@@ -543,66 +618,65 @@ footer{
   border-top:1px solid var(--border);
   margin-top:40px;
 }
-.footer-top{
+.footer-logos-bar{
+  padding:32px 24px;
+  border-bottom:1px solid var(--border);
+}
+.footer-logos-inner{
   max-width:1100px;margin:0 auto;
-  padding:40px 24px 28px;
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  display:flex;align-items:center;gap:32px;flex-wrap:wrap;
 }
-@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:28px}}
-@media(max-width:600px){.footer-top{grid-template-columns:1fr}}
-
-/* Footer brand column */
-.footer-brand{}
-.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.footer-logo-mark{
-  width:36px;height:36px;border-radius:8px;
-  background:linear-gradient(135deg,var(--cyan),var(--blue));
-  display:grid;place-items:center;flex-shrink:0;
+.footer-logo-main{
+  display:flex;align-items:center;gap:14px;flex-shrink:0;
 }
-.footer-logo-mark svg{width:18px;height:18px;fill:var(--bg)}
-.footer-logo-name{font-family:var(--od);font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.02em}
-.footer-logo-sub{font-family:var(--om);font-size:10px;color:var(--cyan);letter-spacing:0.08em;text-transform:uppercase}
-.footer-slogan{font-size:12px;color:var(--text3);line-height:1.7;margin-bottom:16px;max-width:260px;font-style:italic}
-.footer-contact a{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--om);font-size:11px;color:var(--text3);text-decoration:none;
-  transition:color 0.15s;margin-right:16px;
+.footer-oomus-text{display:flex;flex-direction:column;gap:2px}
+.footer-oomus-name{
+  font-family:var(--od);font-size:14px;font-weight:700;
+  color:var(--text);letter-spacing:-0.01em;
 }
-.footer-contact a:hover{color:var(--cyan)}
-.footer-contact a svg{width:12px;height:12px;flex-shrink:0}
-
-/* Footer columns */
-.footer-col-title{
-  font-family:var(--od);font-size:11px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);
-  margin-bottom:14px;
+.footer-oomus-slogan{
+  font-size:11px;color:var(--text3);
+  font-style:italic;max-width:280px;line-height:1.4;
 }
-.footer-col-list{list-style:none}
-.footer-col-list li{margin-bottom:8px}
-.footer-col-list li a{font-size:12px;color:var(--text3);text-decoration:none;transition:color 0.15s;font-family:var(--ob)}
-.footer-col-list li a:hover{color:var(--cyan)}
-.footer-col-list li span{font-size:12px;color:var(--text3);font-family:var(--ob)}
-
-/* Tech specs column */
-.footer-spec{display:flex;flex-direction:column;gap:8px}
-.spec-row{
-  display:flex;align-items:center;justify-content:space-between;
-  font-size:10px;padding:6px 0;border-bottom:1px solid var(--border);
+.footer-logos-sep{
+  width:1px;height:40px;background:var(--border2);flex-shrink:0;
 }
-.spec-key{font-family:var(--om);color:var(--text3);letter-spacing:0.05em}
-.spec-val{font-family:var(--om);color:var(--cyan);font-weight:500}
+.footer-logos-partners{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.flogo{
+  height:36px;width:auto;object-fit:contain;
+  max-width:120px;
+}
+.logo-white{
+  filter:none;opacity:0.8;
+  transition:opacity 0.15s;
+}
+.logo-white:hover{opacity:1}
+.flogo-main{
+  height:36px;max-width:140px;
+}
+.flogo-fallback{
+  font-family:var(--od);font-size:15px;font-weight:800;
+  color:var(--cyan);letter-spacing:-0.02em;
+}
+@media(max-width:700px){
+  .footer-logos-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .footer-logos-sep{width:40px;height:1px}
+}
 
 /* Footer bottom bar */
 .footer-bar{
-  border-top:1px solid var(--border);
-  padding:16px 24px;
+  padding:14px 24px;
 }
 .footer-bar-inner{
   max-width:1100px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
 }
 .footer-bar-left{font-size:11px;color:var(--text3);font-family:var(--om)}
-.footer-bar-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-bar-left a{color:var(--text3);text-decoration:none;transition:color 0.15s}
+.footer-bar-left a:hover{color:var(--cyan)}
+.footer-bar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .footer-bar-right span,.footer-bar-right a{font-size:11px;color:var(--text3);text-decoration:none;font-family:var(--om);transition:color 0.15s}
 .footer-bar-right a:hover{color:var(--cyan)}
 .footer-bar-sep{color:var(--border2)}
@@ -620,24 +694,26 @@ footer{
 </head>
 <body>
 
-<!-- Aurora -->
-<div class="aurora">
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
-</div>
-
 <!-- Nav -->
 <nav>
   <div class="nav-i">
     <a class="nav-logo" href="#">
-      <div class="nav-mark">
+      <!--
+        LOGO OOMUS — remplacer src par le chemin de votre logo
+        Taille recommandée : hauteur 32px, fond transparent PNG
+        Exemple : src="assets/logos/oomus-logo.png"
+      -->
+      <img src="https://images.prismic.io/ramatouexpress/aeT5qZ1ZCF7ETVnC_Logo_Oomus.png?auto=format,compress"
+           alt="Oomus DPI"
+           class="nav-logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <!-- Fallback animé si logo absent -->
+      <div class="nav-mark" style="display:none">
         <div class="nav-mark-ring"></div>
         <div class="nav-mark-core">
           <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3"/></svg>
         </div>
       </div>
-      <span class="nav-brand">Oomus eHealth</span>
     </a>
     <div class="nav-pipe"></div>
     <span class="nav-sub">CampaignID v2.1</span>
@@ -655,12 +731,122 @@ footer{
     <h1>Vérifiez l'authenticité<br>de votre <span class="hl">carte digitale</span></h1>
     <p class="hero-sub">Saisissez le code imprimé sur votre carte ou scannez le QR code pour confirmer son authenticité en temps réel, sans transmission de données vers un serveur.</p>
   </div>
-  <div class="hero-visual">
-    <div class="hv-ring-outer"></div>
-    <div class="hv-ring-mid"></div>
-    <div class="hv-core">
-      <div class="hv-icon">🛡️</div>
-    </div>
+  <div class="hero-visual" aria-hidden="true">
+    <svg class="qr-anim" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Fond -->
+      <rect width="160" height="160" rx="14" fill="var(--surface)" stroke="var(--border2)" stroke-width="1"/>
+
+      <!-- QR code simulé — blocs statiques -->
+      <g fill="#08BCF1" opacity="0.85">
+        <!-- Coin haut-gauche -->
+        <rect x="12" y="12" width="40" height="40" rx="4" fill="none" stroke="#08BCF1" stroke-width="3"/>
+        <rect x="20" y="20" width="24" height="24" rx="2"/>
+        <!-- Coin haut-droite -->
+        <rect x="108" y="12" width="40" height="40" rx="4" fill="none" stroke="#08BCF1" stroke-width="3"/>
+        <rect x="116" y="20" width="24" height="24" rx="2"/>
+        <!-- Coin bas-gauche -->
+        <rect x="12" y="108" width="40" height="40" rx="4" fill="none" stroke="#08BCF1" stroke-width="3"/>
+        <rect x="20" y="116" width="24" height="24" rx="2"/>
+        <!-- Data modules (petits carrés aléatoires) -->
+        <rect x="62" y="12" width="8" height="8" rx="1"/>
+        <rect x="74" y="12" width="8" height="8" rx="1"/>
+        <rect x="86" y="12" width="8" height="8" rx="1"/>
+        <rect x="62" y="24" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="80" y="24" width="8" height="8" rx="1"/>
+        <rect x="62" y="36" width="8" height="8" rx="1"/>
+        <rect x="74" y="36" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="86" y="36" width="8" height="8" rx="1" opacity="0.7"/>
+        <rect x="12" y="62" width="8" height="8" rx="1"/>
+        <rect x="24" y="62" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="36" y="62" width="8" height="8" rx="1"/>
+        <rect x="48" y="62" width="8" height="8" rx="1" opacity="0.7"/>
+        <rect x="62" y="62" width="8" height="8" rx="1"/>
+        <rect x="74" y="62" width="8" height="8" rx="1" opacity="0.4"/>
+        <rect x="86" y="62" width="8" height="8" rx="1"/>
+        <rect x="98" y="62" width="8" height="8" rx="1" opacity="0.6"/>
+        <rect x="110" y="62" width="8" height="8" rx="1"/>
+        <rect x="122" y="62" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="134" y="62" width="8" height="8" rx="1"/>
+        <rect x="12" y="74" width="8" height="8" rx="1" opacity="0.6"/>
+        <rect x="36" y="74" width="8" height="8" rx="1"/>
+        <rect x="62" y="74" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="80" y="74" width="8" height="8" rx="1"/>
+        <rect x="98" y="74" width="8" height="8" rx="1" opacity="0.4"/>
+        <rect x="122" y="74" width="8" height="8" rx="1"/>
+        <rect x="12" y="86" width="8" height="8" rx="1"/>
+        <rect x="24" y="86" width="8" height="8" rx="1" opacity="0.7"/>
+        <rect x="48" y="86" width="8" height="8" rx="1"/>
+        <rect x="62" y="86" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="74" y="86" width="8" height="8" rx="1"/>
+        <rect x="98" y="86" width="8" height="8" rx="1" opacity="0.6"/>
+        <rect x="110" y="86" width="8" height="8" rx="1"/>
+        <rect x="134" y="86" width="8" height="8" rx="1" opacity="0.4"/>
+        <rect x="62" y="98" width="8" height="8" rx="1"/>
+        <rect x="86" y="98" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="110" y="98" width="8" height="8" rx="1"/>
+        <rect x="122" y="98" width="8" height="8" rx="1" opacity="0.7"/>
+        <rect x="62" y="110" width="8" height="8" rx="1" opacity="0.6"/>
+        <rect x="74" y="110" width="8" height="8" rx="1"/>
+        <rect x="98" y="110" width="8" height="8" rx="1" opacity="0.4"/>
+        <rect x="134" y="110" width="8" height="8" rx="1"/>
+        <rect x="62" y="122" width="8" height="8" rx="1"/>
+        <rect x="80" y="122" width="8" height="8" rx="1" opacity="0.5"/>
+        <rect x="110" y="122" width="8" height="8" rx="1" opacity="0.7"/>
+        <rect x="122" y="122" width="8" height="8" rx="1"/>
+        <rect x="62" y="134" width="8" height="8" rx="1" opacity="0.6"/>
+        <rect x="86" y="134" width="8" height="8" rx="1"/>
+        <rect x="98" y="134" width="8" height="8" rx="1" opacity="0.4"/>
+        <rect x="134" y="134" width="8" height="8" rx="1" opacity="0.7"/>
+      </g>
+
+      <!-- Ligne de scan — monte et descend en boucle -->
+      <g class="scan-line-group">
+        <line x1="8" y1="0" x2="152" y2="0"
+              stroke="#08BCF1" stroke-width="2" opacity="0.9"
+              class="scan-line"/>
+        <!-- Glow de la ligne -->
+        <rect x="8" y="-6" width="144" height="12" rx="2"
+              fill="url(#scanGlow)" class="scan-glow-rect" opacity="0.4"/>
+      </g>
+
+      <!-- Coins de visée -->
+      <g stroke="#08BCF1" stroke-width="3" fill="none" opacity="0.7">
+        <path d="M8,26 L8,8 L26,8"/>
+        <path d="M134,8 L152,8 L152,26"/>
+        <path d="M8,134 L8,152 L26,152"/>
+        <path d="M152,134 L152,152 L134,152"/>
+      </g>
+
+      <!-- Hash hex qui défile en bas -->
+      <g class="hash-text-group">
+        <text x="80" y="152" text-anchor="middle"
+              font-family="'IBM Plex Mono', monospace"
+              font-size="6" fill="#08BCF1" opacity="0.6"
+              class="hash-scroll">
+          SHA-256 · A3F9 · 8B2C · 4E71 · D06A · F3C1
+        </text>
+      </g>
+
+      <!-- Verified badge qui apparaît / disparaît -->
+      <g class="verified-badge" opacity="0">
+        <rect x="46" y="64" width="68" height="32" rx="16"
+              fill="var(--green)" opacity="0.15" stroke="var(--green)" stroke-width="1"/>
+        <text x="80" y="83" text-anchor="middle"
+              font-family="'Onest', sans-serif"
+              font-size="11" font-weight="700"
+              fill="var(--green)">✓ VALID</text>
+      </g>
+
+      <!-- Dégradé pour le glow -->
+      <defs>
+        <linearGradient id="scanGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#08BCF1" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#08BCF1" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+    </svg>
   </div>
 </div>
 
@@ -673,53 +859,104 @@ footer{
     <!-- Search panel -->
     <div class="panel">
       <div class="panel-head">
-        <span class="panel-head-label">Vérification</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="panel-head-label">Vérification de carte</span>
         <div class="panel-head-dot"></div>
       </div>
 
       <!-- Tabs -->
       <div class="tabs">
         <button class="tab-btn active" id="tab-single" onclick="switchTab('single')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
           Code unique
         </button>
         <button class="tab-btn" id="tab-bulk" onclick="switchTab('bulk')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Vérification de masse
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/>
+          </svg>
+          Masse
         </button>
       </div>
 
       <!-- Panel single -->
       <div class="tab-panel active" id="panel-single">
-        <div class="input-row">
-          <input id="ci" class="code-field" type="text"
-                 placeholder="ex : SN-FI1Q9NR5 ou CPS-4T4MVWIG"
-                 maxlength="20" autocomplete="off" spellcheck="false"/>
-          <button class="btn-verify" id="bv" onclick="verify()">Vérifier →</button>
+
+        <!-- Champ code -->
+        <div class="field-block">
+          <div class="field-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            Code de la carte
+          </div>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><path d="M14 15h3v3"/><path d="M17 18h4"/><path d="M20 15v4"/>
+            </svg>
+            <input id="ci" class="code-field" type="text"
+                   placeholder="ex : SN-FI1Q9NR5 · CPS-4T4MVWIG"
+                   maxlength="20" autocomplete="off" spellcheck="false"/>
+          </div>
         </div>
+
+        <!-- Bouton vérifier -->
+        <button class="btn-verify" id="bv" onclick="verify()">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+          Vérifier l'authenticité
+        </button>
+
+        <!-- Hint format -->
         <div class="input-hint">
-          FORMAT — PREFIX (2-8 lettres) + TIRET + 8 caractères Base36 (A-Z, 0-9) · Non sensible à la casse
+          <svg class="input-hint-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          FORMAT — PREFIX (2–8 lettres) + tiret + 8 caractères alphanumériques Base36. Non sensible à la casse.
         </div>
+
+        <!-- Scanner QR -->
         <div class="scan-row">
           <button class="btn-scan" onclick="openScan()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
               <rect x="7" y="7" width="10" height="10" rx="1"/>
+              <line x1="11" y1="11" x2="13" y2="11"/><line x1="12" y1="10" x2="12" y2="14"/>
             </svg>
-            Scanner QR code
+            Scanner le QR code
           </button>
-          <span class="scan-hint">Caméra — ISO/IEC 18004</span>
+          <span class="scan-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            Caméra · ISO/IEC 18004
+          </span>
         </div>
-      </div>
+
+      </div><!-- /panel-single -->
 
       <!-- Panel bulk -->
       <div class="tab-panel" id="panel-bulk">
+
+        <!-- Drop zone redesignée -->
         <div class="drop-zone" id="drop-zone">
           <input type="file" id="bulk-file" accept=".txt,.csv" onchange="handleBulkFile(event)"/>
-          <span class="drop-icon">📂</span>
+          <div class="drop-svg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
           <div class="drop-title">Déposer ALL_QRCODES.txt</div>
-          <div class="drop-hint">ou <strong>cliquer pour sélectionner</strong> · .txt · .csv · 1 code/ligne</div>
+          <div class="drop-hint">ou <strong>cliquer pour sélectionner</strong> · 1 code par ligne</div>
+          <div class="drop-chips">
+            <span class="drop-chip">.txt</span>
+            <span class="drop-chip">.csv</span>
+            <span class="drop-chip">Base36</span>
+          </div>
         </div>
+
+        <!-- Progress -->
         <div id="bulk-progress">
           <div class="prog-head">
             <span class="prog-lbl" id="bulk-prog-lbl">Analyse en cours…</span>
@@ -727,29 +964,63 @@ footer{
           </div>
           <div class="prog-track"><div class="prog-fill" id="bulk-prog-fill"></div></div>
         </div>
+
+        <!-- Summary badges -->
         <div id="bulk-summary">
           <div class="bulk-badges">
-            <div class="bulk-badge bb-tot"><span class="bulk-badge-n" id="bs-tot">0</span><span class="bulk-badge-l">Total</span></div>
-            <div class="bulk-badge bb-ok"><span class="bulk-badge-n" id="bs-ok">0</span><span class="bulk-badge-l">Valides</span></div>
-            <div class="bulk-badge bb-wn"><span class="bulk-badge-n" id="bs-wn">0</span><span class="bulk-badge-l">Utilisés</span></div>
-            <div class="bulk-badge bb-er"><span class="bulk-badge-n" id="bs-er">0</span><span class="bulk-badge-l">Invalides</span></div>
+            <div class="bulk-badge bb-tot">
+              <span class="bulk-badge-n" id="bs-tot">0</span>
+              <span class="bulk-badge-l">Total</span>
+            </div>
+            <div class="bulk-badge bb-ok">
+              <span class="bulk-badge-n" id="bs-ok">0</span>
+              <span class="bulk-badge-l">Valides</span>
+            </div>
+            <div class="bulk-badge bb-wn">
+              <span class="bulk-badge-n" id="bs-wn">0</span>
+              <span class="bulk-badge-l">Utilisés</span>
+            </div>
+            <div class="bulk-badge bb-er">
+              <span class="bulk-badge-n" id="bs-er">0</span>
+              <span class="bulk-badge-l">Invalides</span>
+            </div>
           </div>
         </div>
+
+        <!-- Actions -->
         <div class="bulk-actions" id="bulk-actions" style="display:none">
           <button class="btn-export" onclick="exportCSV()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
             Exporter CSV
           </button>
-          <button class="btn-reset" onclick="resetBulk()">Réinitialiser</button>
+          <button class="btn-reset" onclick="resetBulk()">
+            Réinitialiser
+          </button>
         </div>
+
+        <!-- Table résultats -->
         <div id="bulk-table-wrap">
           <table class="bulk-table">
-            <thead><tr><th>#</th><th>Code</th><th>Statut</th><th>Lot</th><th>Date</th></tr></thead>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Statut</th>
+                <th>Lot</th>
+                <th>Date</th>
+              </tr>
+            </thead>
             <tbody id="bulk-tbody"></tbody>
           </table>
         </div>
-      </div>
-    </div>
+
+      </div><!-- /panel-bulk -->
+
+    </div><!-- /.panel -->
 
     <!-- Loader -->
     <div id="loader">
@@ -801,23 +1072,6 @@ footer{
       </div>
     </div>
 
-    <!-- Tech specs -->
-    <div class="panel">
-      <div class="panel-head">
-        <span class="panel-head-label">Spécifications techniques</span>
-      </div>
-      <div style="padding:0 18px 14px">
-        <div class="footer-spec">
-          <div class="spec-row"><span class="spec-key">Système</span><span class="spec-val">v2.1.0</span></div>
-          <div class="spec-row"><span class="spec-key">Algorithme</span><span class="spec-val">SHA-256</span></div>
-          <div class="spec-row"><span class="spec-key">Format code</span><span class="spec-val">Base36</span></div>
-          <div class="spec-row"><span class="spec-key">QR Standard</span><span class="spec-val">ISO 18004</span></div>
-          <div class="spec-row"><span class="spec-key">PDF Codec</span><span class="spec-val">FlateDecode</span></div>
-          <div class="spec-row"><span class="spec-key">AI Model</span><span class="spec-val">IsolationForest</span></div>
-        </div>
-      </div>
-    </div>
-
   </div><!-- /.sidebar -->
 
 </div><!-- /.main -->
@@ -834,83 +1088,65 @@ footer{
 
 <!-- Footer -->
 <footer>
-  <div class="footer-top">
+  <!--
+    ═══════════════════════════════════════════════════════════
+    LOGOS INSTITUTIONNELS — Remplacer les src par les vrais logos
+    Taille recommandée : hauteur 36px max, fond transparent PNG
+    Les logos sont filtrés en blanc (filter: brightness(0) invert(1))
+    Pour garder les couleurs originales : retirer la classe .logo-white
+    ═══════════════════════════════════════════════════════════
+  -->
+  <div class="footer-logos-bar">
+    <div class="footer-logos-inner">
 
-    <!-- Brand + Slogan -->
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo-mark">
-          <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="3" fill="white"/></svg>
-        </div>
-        <div>
-          <div class="footer-logo-name">Oomus DPI</div>
-          <div class="footer-logo-sub">Digital Public Infrastructure</div>
+      <!-- Logo principal Oomus — obligatoire -->
+      <div class="footer-logo-main">
+        <img src="https://images.prismic.io/ramatouexpress/aeT5qZ1ZCF7ETVnC_Logo_Oomus.png?auto=format,compress"
+             alt="Oomus DPI"
+             class="flogo flogo-main logo-white"
+             onerror="this.outerHTML='<span class=\'flogo-fallback\'>OOMUS DPI</span>'">
+        <div class="footer-oomus-text">
+          <span class="footer-oomus-name">Oomus DPI</span>
+          <span class="footer-oomus-slogan">Driving scalable digital health solutions across Africa and LMICs</span>
         </div>
       </div>
-      <p class="footer-slogan">Driving scalable digital health solutions across Africa and LMICs</p>
-      <div class="footer-contact">
-        <a href="https://www.oomus.org" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          www.oomus.org
-        </a>
-        <a href="mailto:ceo@oomus.org">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          ceo@oomus.org
-        </a>
+
+      <div class="footer-logos-sep"></div>
+
+      <!-- Logos partenaires institutionnels -->
+      <div class="footer-logos-partners">
+        <img src="assets/logos/ministere-sante.png"
+             alt="Ministère de la Santé"
+             class="flogo logo-white"
+             onerror="this.style.display='none'">
+        <img src="assets/logos/pnlp.png"
+             alt="PNLP Sénégal"
+             class="flogo logo-white"
+             onerror="this.style.display='none'">
+        <img src="assets/logos/PATH_Logo_Color.png"
+             alt="PATH"
+             class="flogo logo-white"
+             onerror="this.style.display='none'">
+        <!--
+          Ajouter d'autres logos partenaires ici :
+          <img src="assets/logos/usaid.png" alt="USAID" class="flogo logo-white">
+          <img src="assets/logos/who.png"   alt="WHO"   class="flogo logo-white">
+        -->
       </div>
-    </div>
 
-    <!-- Système -->
-    <div>
-      <div class="footer-col-title">Système</div>
-      <ul class="footer-col-list">
-        <li><span>eHealth CampaignID</span></li>
-        <li><span>Version 2.1.0</span></li>
-        <li><span>Python 3.11+</span></li>
-        <li><span>FastAPI + uvicorn</span></li>
-        <li><span>ReportLab PDF</span></li>
-        <li><span>scikit-learn AI</span></li>
-      </ul>
     </div>
-
-    <!-- Campagnes -->
-    <div>
-      <div class="footer-col-title">Campagnes</div>
-      <ul class="footer-col-list">
-        <li><span>CPS — Paludisme</span></li>
-        <li><span>MILD — Moustiquaires</span></li>
-        <li><span>Vaccination</span></li>
-        <li><span>Custom templates</span></li>
-        <li><span>fr · en · wo</span></li>
-        <li><span>Afrique subsaharienne</span></li>
-      </ul>
-    </div>
-
-    <!-- Partenaires -->
-    <div>
-      <div class="footer-col-title">Partenaires</div>
-      <ul class="footer-col-list">
-        <li><span>Ministère de la Santé</span></li>
-        <li><span>PNLP Sénégal</span></li>
-        <li><span>PATH</span></li>
-        <li><span>USAID</span></li>
-        <li><span>WHO / OMS</span></li>
-        <li><span>UNICEF</span></li>
-      </ul>
-    </div>
-
   </div>
 
   <!-- Bottom bar -->
   <div class="footer-bar">
     <div class="footer-bar-inner">
       <div class="footer-bar-left">
-        © 2026 Oomus DPI · Tous droits réservés · eHealth CampaignID v2.1
+        © 2026 Oomus DPI · <a href="https://www.oomus.org" target="_blank">www.oomus.org</a> · <a href="mailto:ceo@oomus.org">ceo@oomus.org</a>
       </div>
       <div class="footer-bar-right">
         <span>SHA-256 · Base36 · ISO 18004</span>
         <span class="footer-bar-sep">·</span>
-        <a href="https://www.oomus.org" target="_blank">oomus.org</a>
+        <span>eHealth CampaignID v2.1</span>
         <span class="footer-bar-sep">·</span>
         <span>Dakar, Sénégal · New York, USA</span>
       </div>
