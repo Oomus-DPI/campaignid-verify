@@ -10,6 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="https://images.prismic.io/ramatouexpress/acGKQ5GXnQHGY3xd_icon_oomus.png?auto=format,compress">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <style>
+/* ── TOKENS ──────────────────────────────────────── */
 :root {
   --bg:      #F0F2F5;
   --bg2:     #E8EBF0;
@@ -49,43 +50,37 @@ body::before{
   background-size:32px 32px;
 }
 
-/* ── NAV ─────────────────────────────────────────── */
-nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdrop-filter:blur(20px);background:rgba(248,250,252,0.94)}
-.nav-i{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:14px;height:56px}
+/* ── NAV ──────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdrop-filter:blur(20px);background:rgba(248,250,252,0.95)}
+.nav-i{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px;height:54px}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.nav-logo-img{height:30px;width:auto;object-fit:contain}
-.nav-mark{position:relative;width:32px;height:32px;display:grid;place-items:center;flex-shrink:0}
+.nav-logo-img{height:28px;width:auto;object-fit:contain}
+.nav-mark{position:relative;width:30px;height:30px;display:grid;place-items:center;flex-shrink:0}
 .nav-mark-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--cyan);animation:spin-ring 6s linear infinite;opacity:0.55}
 .nav-mark-ring::before{content:'';position:absolute;top:-2px;left:50%;width:4px;height:4px;border-radius:50%;background:var(--cyan);transform:translateX(-50%)}
 @keyframes spin-ring{to{transform:rotate(360deg)}}
 .nav-mark-core{width:18px;height:18px;border-radius:50%;background:var(--cyan);display:grid;place-items:center}
 .nav-mark-core svg{width:9px;height:9px;fill:white}
-.nav-pipe{width:1px;height:16px;background:var(--brd2)}
-.nav-sub{font-size:11px;color:var(--ink3);font-family:var(--om);letter-spacing:0.04em}
-.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.nav-pipe{width:1px;height:16px;background:var(--brd2);flex-shrink:0}
+.nav-sub{font-size:11px;color:var(--ink3);font-family:var(--om);letter-spacing:0.04em;white-space:nowrap}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-badge{
   font-family:var(--om);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--cyan);border:1px solid rgba(8,188,241,0.28);background:rgba(8,188,241,0.07);
-  padding:4px 12px;border-radius:4px;
-  position:relative;overflow:hidden;
+  padding:4px 10px;border-radius:4px;position:relative;overflow:hidden;white-space:nowrap;
 }
 .nav-badge::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(8,188,241,0.15),transparent);animation:shimmer 3s infinite}
 @keyframes shimmer{to{left:200%}}
-/* Lang switcher */
-.lang-sw{display:flex;gap:2px;background:var(--bg3);border:1px solid var(--brd);border-radius:6px;padding:2px}
-.lang-btn{height:26px;padding:0 10px;background:transparent;border:none;border-radius:4px;
-  font-family:var(--od);font-size:11px;font-weight:600;color:var(--ink3);
-  cursor:pointer;transition:all 0.15s;letter-spacing:0.03em}
+.lang-sw{display:flex;gap:2px;background:var(--bg3);border:1px solid var(--brd);border-radius:6px;padding:2px;flex-shrink:0}
+.lang-btn{height:26px;padding:0 9px;background:transparent;border:none;border-radius:4px;font-family:var(--od);font-size:11px;font-weight:600;color:var(--ink3);cursor:pointer;transition:all 0.15s;letter-spacing:0.03em}
 .lang-btn.active{background:var(--surf);color:var(--cyan);box-shadow:0 1px 3px rgba(0,0,0,0.1)}
 
-/* ── HERO ────────────────────────────────────────── */
+/* ── HERO ─────────────────────────────────────────── */
 .hero{
-  position:relative;z-index:1;
-  max-width:1160px;margin:0 auto;
-  padding:44px 24px 32px;
-  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  position:relative;z-index:1;max-width:1160px;margin:0 auto;
+  padding:40px 20px 28px;
+  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
 }
-@media(max-width:680px){.hero{grid-template-columns:1fr;padding:32px 20px 24px}}
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--om);font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
@@ -95,7 +90,7 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .hero-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 .hero h1{
-  font-family:var(--od);font-size:clamp(24px,3.5vw,40px);font-weight:900;
+  font-family:var(--od);font-size:clamp(22px,3.5vw,40px);font-weight:900;
   line-height:1.07;letter-spacing:-0.04em;color:var(--ink);margin-bottom:12px;
 }
 .hero h1 .hl{
@@ -103,64 +98,53 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .hero-sub{font-size:13px;color:var(--ink2);line-height:1.7;max-width:440px}
-/* QR visual */
-.hero-visual{flex-shrink:0;width:150px;height:150px}
-@media(max-width:680px){.hero-visual{display:none}}
-.qr-anim{width:150px;height:150px;display:block;border-radius:12px;
-  box-shadow:0 4px 24px rgba(8,188,241,0.12),0 1px 4px rgba(0,0,0,0.07)}
+.hero-visual{flex-shrink:0;width:140px;height:140px}
+.qr-anim{width:140px;height:140px;display:block;border-radius:12px;box-shadow:0 4px 24px rgba(8,188,241,0.12),0 1px 4px rgba(0,0,0,0.07)}
 .scan-line{animation:scan 2.4s cubic-bezier(0.4,0,0.6,1) infinite}
 .scan-glow-rect{animation:scan 2.4s cubic-bezier(0.4,0,0.6,1) infinite}
-@keyframes scan{0%{transform:translateY(8px)}50%{transform:translateY(132px)}100%{transform:translateY(8px)}}
+@keyframes scan{0%{transform:translateY(8px)}50%{transform:translateY(122px)}100%{transform:translateY(8px)}}
 .verified-badge{animation:badge-pop 2.4s ease-in-out infinite}
 @keyframes badge-pop{0%,60%{opacity:0}75%,90%{opacity:1}100%{opacity:0}}
 
-/* ── MAIN GRID ───────────────────────────────────── */
+/* ── MAIN GRID ────────────────────────────────────── */
 .main{
-  position:relative;z-index:1;
-  max-width:1160px;margin:0 auto;
-  padding:0 24px 80px;
+  position:relative;z-index:1;max-width:1160px;margin:0 auto;
+  padding:0 20px 80px;
   display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);
   gap:20px;align-items:start;
 }
-@media(max-width:900px){.main{grid-template-columns:1fr}}
 
-/* ── PANEL ───────────────────────────────────────── */
+/* ── PANEL ────────────────────────────────────────── */
 .panel{
   background:var(--surf);border:1px solid var(--brd);border-radius:14px;
   overflow:hidden;margin-bottom:16px;
   box-shadow:0 1px 3px rgba(0,0,0,0.05),0 4px 12px rgba(0,0,0,0.06);
 }
-.panel-head{
-  padding:14px 18px;border-bottom:1px solid var(--brd);
-  display:flex;align-items:center;gap:9px;
-}
+.panel-head{padding:14px 16px;border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:9px}
 .panel-head-icon{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;flex-shrink:0}
 .panel-head-icon svg{width:14px;height:14px}
-.ph-cyan{background:var(--cdim)}
-.ph-cyan svg{stroke:var(--cyan)}
-.ph-green{background:var(--gdim)}
-.ph-green svg{stroke:var(--green)}
-.ph-purple{background:var(--pdim)}
-.ph-purple svg{stroke:var(--purple)}
+.ph-cyan{background:var(--cdim)}.ph-cyan svg{stroke:var(--cyan)}
+.ph-green{background:var(--gdim)}.ph-green svg{stroke:var(--green)}
+.ph-purple{background:var(--pdim)}.ph-purple svg{stroke:var(--purple)}
 .panel-head-label{font-family:var(--od);font-size:13px;font-weight:700;letter-spacing:-0.01em;color:var(--ink)}
 .panel-head-sub{font-size:11px;color:var(--ink3);margin-left:auto;font-family:var(--om)}
 .panel-live-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-left:auto;box-shadow:0 0 0 3px rgba(8,188,241,0.15);animation:blink 2s ease-in-out infinite}
 
-/* ── TABS ────────────────────────────────────────── */
-.tabs{display:flex;gap:4px;margin:14px 16px 16px;background:var(--bg3);border-radius:9px;padding:3px;border:1px solid var(--brd)}
+/* ── TABS ─────────────────────────────────────────── */
+.tabs{display:flex;gap:4px;margin:14px 14px 14px;background:var(--bg3);border-radius:9px;padding:3px;border:1px solid var(--brd)}
 .tab-btn{
   flex:1;height:34px;background:transparent;border:none;border-radius:7px;
   font-family:var(--od);font-size:12px;font-weight:600;color:var(--ink3);
   cursor:pointer;transition:all 0.18s;
-  display:flex;align-items:center;justify-content:center;gap:7px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
 }
-.tab-btn svg{width:13px;height:13px;flex-shrink:0;stroke:currentColor;transition:stroke 0.18s}
+.tab-btn svg{width:13px;height:13px;flex-shrink:0;stroke:currentColor}
 .tab-btn.active{background:var(--surf);color:var(--cyan);box-shadow:0 1px 5px rgba(0,0,0,0.1),0 0 0 1px var(--brd2)}
 .tab-btn:hover:not(.active){color:var(--ink2);background:rgba(0,0,0,0.02)}
 .tab-panel{display:none}.tab-panel.active{display:block}
 
-/* ── FORM SINGLE ─────────────────────────────────── */
-.field-block{padding:0 16px 10px}
+/* ── FORM SINGLE ──────────────────────────────────── */
+.field-block{padding:0 14px 10px}
 .field-label{display:flex;align-items:center;gap:6px;font-family:var(--od);font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:7px}
 .field-label svg{width:12px;height:12px;stroke:var(--cyan);flex-shrink:0}
 .input-wrap{position:relative;display:flex;align-items:center}
@@ -168,15 +152,15 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .code-field{
   width:100%;height:50px;background:var(--surf2);border:1.5px solid var(--brd2);
   border-radius:10px;padding:0 14px 0 42px;
-  font-family:var(--om);font-size:15px;font-weight:600;letter-spacing:0.1em;
+  font-family:var(--om);font-size:15px;font-weight:600;letter-spacing:0.08em;
   color:var(--ink);outline:none;text-transform:uppercase;-webkit-appearance:none;
   transition:border-color 0.18s,box-shadow 0.18s;
 }
 .code-field::placeholder{color:var(--ink3);font-size:11px;letter-spacing:0.01em;text-transform:none;font-weight:400;font-family:var(--ob)}
 .code-field:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(8,188,241,0.14);background:white}
-.code-field:focus+.input-icon,.input-wrap:focus-within .input-icon{stroke:var(--cyan)}
+.input-wrap:focus-within .input-icon{stroke:var(--cyan)}
 .btn-verify{
-  margin:8px 16px 14px;width:calc(100% - 32px);height:48px;
+  margin:8px 14px 14px;width:calc(100% - 28px);height:48px;
   background:var(--cyan);color:white;border:none;border-radius:10px;
   font-family:var(--od);font-size:14px;font-weight:700;letter-spacing:0.01em;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;
@@ -187,12 +171,12 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .btn-verify:active{transform:none}
 .btn-verify:disabled{background:var(--bg3);color:var(--ink3);cursor:not-allowed;box-shadow:none;transform:none}
 .input-hint{
-  margin:0 16px 14px;background:var(--bg3);border:1px solid var(--brd);border-radius:8px;
-  padding:9px 13px;display:flex;align-items:flex-start;gap:9px;
+  margin:0 14px 12px;background:var(--bg3);border:1px solid var(--brd);border-radius:8px;
+  padding:9px 12px;display:flex;align-items:flex-start;gap:8px;
 }
 .hint-icon{flex-shrink:0;margin-top:1px;width:13px;height:13px;stroke:var(--ink3)}
 .hint-text{font-size:11px;color:var(--ink3);font-family:var(--om);line-height:1.65}
-.scan-row{padding:0 16px 16px;display:flex;align-items:center;gap:9px}
+.scan-row{padding:0 14px 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .btn-scan{
   display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;
   background:var(--surf);border:1.5px solid var(--brd2);border-radius:8px;
@@ -205,10 +189,10 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .scan-meta{font-size:10px;color:var(--ink3);font-family:var(--om);display:flex;align-items:center;gap:4px}
 .scan-meta svg{width:11px;height:11px;stroke:var(--ink3)}
 
-/* ── BULK ────────────────────────────────────────── */
+/* ── BULK ─────────────────────────────────────────── */
 .drop-zone{
-  margin:0 16px 14px;border:2px dashed var(--brd2);border-radius:12px;
-  padding:28px 16px;text-align:center;cursor:pointer;
+  margin:0 14px 12px;border:2px dashed var(--brd2);border-radius:12px;
+  padding:28px 14px;text-align:center;cursor:pointer;
   transition:all 0.2s;background:var(--bg3);position:relative;
   display:flex;flex-direction:column;align-items:center;gap:7px;
 }
@@ -220,16 +204,16 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .drop-title{font-size:13px;font-weight:700;color:var(--ink);font-family:var(--od)}
 .drop-sub{font-size:11px;color:var(--ink3);font-family:var(--om)}
 .drop-sub strong{color:var(--cyan);font-weight:600}
-.drop-tags{display:flex;gap:5px;justify-content:center}
+.drop-tags{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
 .drop-tag{font-family:var(--om);font-size:10px;color:var(--ink3);background:var(--surf);border:1px solid var(--brd2);border-radius:4px;padding:2px 7px;letter-spacing:0.03em}
-#bulk-progress{display:none;margin:0 16px 12px}
+#bulk-progress{display:none;margin:0 14px 12px}
 #bulk-progress.on{display:block}
 .prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
 .prog-label{font-size:11px;font-weight:600;color:var(--ink2);font-family:var(--om)}
 .prog-cnt{font-family:var(--om);font-size:11px;color:var(--ink3)}
 .prog-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;border:1px solid var(--brd)}
 .prog-fill{height:100%;background:var(--cyan);border-radius:2px;transition:width 0.1s linear;width:0%}
-#bulk-summary{display:none;margin:0 16px 12px}
+#bulk-summary{display:none;margin:0 14px 12px}
 #bulk-summary.on{display:block}
 .bulk-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
 .bulk-badge{border-radius:9px;padding:11px 6px;text-align:center;border:1px solid var(--brd);background:var(--surf)}
@@ -239,23 +223,23 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .bb-ok{border-color:rgba(4,120,87,0.15);background:rgba(4,120,87,0.04)}.bb-ok .bulk-badge-n{color:var(--green)}.bb-ok .bulk-badge-l{color:var(--green)}
 .bb-wn{border-color:rgba(180,83,9,0.15);background:rgba(180,83,9,0.04)}.bb-wn .bulk-badge-n{color:var(--amber)}.bb-wn .bulk-badge-l{color:var(--amber)}
 .bb-er{border-color:rgba(220,38,38,0.15);background:rgba(220,38,38,0.04)}.bb-er .bulk-badge-n{color:var(--red)}.bb-er .bulk-badge-l{color:var(--red)}
-.bulk-actions{display:flex;gap:7px;padding:0 16px 14px}
+.bulk-actions{display:flex;gap:7px;padding:0 14px 14px}
 .btn-export{flex:1;height:38px;background:var(--cyan);color:white;border:none;border-radius:8px;font-family:var(--od);font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all 0.15s;box-shadow:0 2px 8px rgba(8,188,241,0.25)}
 .btn-export:hover{background:var(--cyan2);box-shadow:0 4px 14px rgba(8,188,241,0.35)}
 .btn-export svg{width:13px;height:13px;stroke:white}
 .btn-reset{height:38px;padding:0 14px;background:var(--surf);border:1.5px solid var(--brd2);border-radius:8px;font-family:var(--od);font-size:12px;font-weight:600;color:var(--ink2);cursor:pointer;transition:all 0.15s}
 .btn-reset:hover{border-color:var(--red);color:var(--red);background:rgba(220,38,38,0.04)}
-#bulk-table-wrap{display:none;margin:0 16px 14px;max-height:240px;overflow-y:auto;border:1.5px solid var(--brd);border-radius:10px}
+#bulk-table-wrap{display:none;margin:0 14px 14px;max-height:220px;overflow-y:auto;border:1.5px solid var(--brd);border-radius:10px;-webkit-overflow-scrolling:touch}
 #bulk-table-wrap.on{display:block}
-.bt{width:100%;border-collapse:collapse}
-.bt thead th{position:sticky;top:0;z-index:1;background:var(--bg3);padding:8px 11px;font-family:var(--om);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);text-align:left;border-bottom:1.5px solid var(--brd)}
+.bt{width:100%;border-collapse:collapse;min-width:380px}
+.bt thead th{position:sticky;top:0;z-index:1;background:var(--bg3);padding:8px 10px;font-family:var(--om);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);text-align:left;border-bottom:1.5px solid var(--brd)}
 .bt tbody tr+tr{border-top:1px solid var(--brd)}
 .bt tbody tr:hover{background:rgba(8,188,241,0.04)}
-.bt td{padding:7px 11px;font-size:11px;color:var(--ink)}
+.bt td{padding:7px 10px;font-size:11px;color:var(--ink)}
 .bt td.mono{font-family:var(--om);font-size:11px;font-weight:600;letter-spacing:0.05em}
 .bt td.dim{color:var(--ink3);font-family:var(--om);font-size:10px}
 
-/* ── LOADER ──────────────────────────────────────── */
+/* ── LOADER ───────────────────────────────────────── */
 #loader{display:none;margin-bottom:16px}
 #loader.on{display:block}
 .loader-panel{background:var(--surf);border:1px solid var(--brd);border-radius:12px;padding:32px 20px;text-align:center}
@@ -263,50 +247,48 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 @keyframes spin{to{transform:rotate(360deg)}}
 .loader-txt{font-family:var(--om);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3)}
 
-/* ── RESULT ──────────────────────────────────────── */
+/* ── RESULT ───────────────────────────────────────── */
 #result{display:none;margin-bottom:16px}
 #result.on{display:block;animation:rise 0.38s cubic-bezier(0.22,1,0.36,1)}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .res-panel{background:var(--surf);border:1px solid var(--brd);border-radius:12px;overflow:hidden}
-.res-head{padding:18px 18px 14px;display:flex;align-items:flex-start;gap:14px}
+.res-head{padding:16px 16px 12px;display:flex;align-items:flex-start;gap:12px}
 .rv{border-left:3px solid var(--green);background:linear-gradient(135deg,rgba(4,120,87,0.05),transparent)}
 .ri{border-left:3px solid var(--red);background:linear-gradient(135deg,rgba(220,38,38,0.05),transparent)}
 .ru{border-left:3px solid var(--blue);background:linear-gradient(135deg,rgba(29,78,216,0.05),transparent)}
 .rk{border-left:3px solid var(--amber);background:linear-gradient(135deg,rgba(180,83,9,0.05),transparent)}
-.res-icon{width:48px;height:48px;flex-shrink:0;border-radius:50%;display:grid;place-items:center}
-.res-icon svg{width:22px;height:22px}
+.res-icon{width:46px;height:46px;flex-shrink:0;border-radius:50%;display:grid;place-items:center}
+.res-icon svg{width:21px;height:21px}
 .rv .res-icon{background:var(--gdim);border:1px solid rgba(4,120,87,0.25)}.rv .res-icon svg{stroke:var(--green)}
 .ri .res-icon{background:var(--rdim);border:1px solid rgba(220,38,38,0.25)}.ri .res-icon svg{stroke:var(--red)}
 .ru .res-icon{background:var(--bdim);border:1px solid rgba(29,78,216,0.25)}.ru .res-icon svg{stroke:var(--blue)}
 .rk .res-icon{background:var(--adim);border:1px solid rgba(180,83,9,0.25)}.rk .res-icon svg{stroke:var(--amber)}
 .rv .res-icon{animation:pulse-icon 2s ease-out infinite}
 @keyframes pulse-icon{0%,70%{box-shadow:0 0 0 0 rgba(4,120,87,0.25)}100%{box-shadow:0 0 0 8px transparent}}
-.res-text{flex:1;padding-top:2px}
-.res-title{font-family:var(--od);font-size:18px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:4px}
+.res-text{flex:1;padding-top:2px;min-width:0}
+.res-title{font-family:var(--od);font-size:17px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:4px}
 .rv .res-title{color:var(--green)}.ri .res-title{color:var(--red)}.ru .res-title{color:var(--blue)}.rk .res-title{color:var(--amber)}
 .res-desc{font-size:12px;color:var(--ink3);line-height:1.6}
-.res-body{padding:14px 18px;border-top:1px solid var(--brd)}
-.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin-bottom:14px}
+.res-body{padding:12px 16px;border-top:1px solid var(--brd)}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px 16px;margin-bottom:12px}
 .res-field label{display:block;font-family:var(--om);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:3px}
 .res-field .v{font-size:13px;color:var(--ink);font-weight:500}
-.res-field .v.mono{font-family:var(--om);font-size:12px;letter-spacing:0.06em}
+.res-field .v.mono{font-family:var(--om);font-size:11px;letter-spacing:0.06em;word-break:break-all}
 .badge{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:4px;font-family:var(--om);font-size:10px;font-weight:500;letter-spacing:0.07em}
 .badge::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .b-a{background:var(--gdim);color:var(--green);border:1px solid rgba(4,120,87,0.2)}.b-a::before{background:var(--green)}
 .b-u{background:var(--bdim);color:var(--blue);border:1px solid rgba(29,78,216,0.2)}.b-u::before{background:var(--blue)}
 .b-r{background:var(--rdim);color:var(--red);border:1px solid rgba(220,38,38,0.2)}.b-r::before{background:var(--red)}
 .b-k{background:var(--adim);color:var(--amber);border:1px solid rgba(180,83,9,0.2)}.b-k::before{background:var(--amber)}
-.hash-block{background:var(--bg3);border:1px solid var(--brd);border-radius:8px;padding:10px 12px}
+.hash-block{background:var(--bg3);border:1px solid var(--brd);border-radius:8px;padding:10px 11px}
 .hash-lbl{font-family:var(--om);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px;display:flex;align-items:center;gap:5px}
 .hash-lbl::before{content:'#';color:var(--cyan);font-weight:700}
 .hash-val{font-family:var(--om);font-size:10px;color:var(--ink3);word-break:break-all;line-height:1.75}
 .hash-val strong{color:var(--cyan)}
 .res-ts{font-family:var(--om);font-size:10px;color:var(--ink3);text-align:right;margin-top:10px}
 
-/* ── SIDEBAR ─────────────────────────────────────── */
+/* ── SIDEBAR ──────────────────────────────────────── */
 .sidebar{display:flex;flex-direction:column;gap:14px}
-
-/* Stats with progress bars */
 .stats-inner{padding:8px 0 4px}
 .stat-item{padding:9px 16px}
 .stat-item+.stat-item{border-top:1px solid var(--brd)}
@@ -316,22 +298,12 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .stat-val{font-family:var(--om);font-size:13px;font-weight:600;color:var(--ink)}
 .stat-bar-track{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
 .stat-bar-fill{height:100%;border-radius:2px;transition:width 0.6s cubic-bezier(0.22,1,0.36,1)}
-/* always-visible empty state */
 .stat-empty{padding:14px 16px;text-align:center;font-size:12px;color:var(--ink3);font-family:var(--om)}
-
-/* Security grid */
-.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px 16px}
-.sec-card{
-  background:var(--surf2);border:1px solid var(--brd);border-radius:10px;
-  padding:13px 12px;
-  transition:box-shadow 0.15s,border-color 0.15s;
-}
+.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:12px 14px 14px}
+.sec-card{background:var(--surf2);border:1px solid var(--brd);border-radius:10px;padding:12px 11px;transition:box-shadow 0.15s,border-color 0.15s}
 .sec-card:hover{border-color:var(--brd2);box-shadow:0 2px 10px rgba(0,0,0,0.07)}
-.sec-card-icon{
-  width:30px;height:30px;border-radius:8px;
-  display:grid;place-items:center;margin-bottom:9px;
-}
-.sec-card-icon svg{width:15px;height:15px}
+.sec-card-icon{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;margin-bottom:8px}
+.sec-card-icon svg{width:14px;height:14px}
 .sci-cyan{background:var(--cdim)}.sci-cyan svg{stroke:var(--cyan)}
 .sci-purple{background:var(--pdim)}.sci-purple svg{stroke:var(--purple)}
 .sci-amber{background:var(--adim)}.sci-amber svg{stroke:var(--amber)}
@@ -339,10 +311,10 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .sec-card-title{font-family:var(--od);font-size:11px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .sec-card-text{font-size:10px;color:var(--ink3);line-height:1.55}
 
-/* ── SCAN MODAL ──────────────────────────────────── */
-#scan-modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.45);backdrop-filter:blur(6px);place-items:center}
+/* ── SCAN MODAL ───────────────────────────────────── */
+#scan-modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.5);backdrop-filter:blur(6px);place-items:center;padding:20px}
 #scan-modal.open{display:grid}
-.scan-box{background:var(--surf);border:1px solid var(--brd2);border-radius:16px;padding:22px;width:320px;max-width:90vw;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.18);animation:pop 0.22s cubic-bezier(0.34,1.56,0.64,1)}
+.scan-box{background:var(--surf);border:1px solid var(--brd2);border-radius:16px;padding:20px;width:100%;max-width:320px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.18);animation:pop 0.22s cubic-bezier(0.34,1.56,0.64,1)}
 @keyframes pop{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
 .scan-title{font-family:var(--od);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .scan-sub{font-size:11px;color:var(--ink3);margin-bottom:14px;font-family:var(--om)}
@@ -350,35 +322,174 @@ nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--brd);backdro
 .btn-close{height:36px;padding:0 18px;background:var(--bg3);border:1px solid var(--brd2);border-radius:7px;font-size:12px;font-weight:600;color:var(--ink2);cursor:pointer;font-family:var(--od);transition:background 0.1s}
 .btn-close:hover{background:var(--brd)}
 
-/* ── FOOTER ──────────────────────────────────────── */
+/* ── FOOTER ───────────────────────────────────────── */
 footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid var(--brd);margin-top:32px}
-.footer-logos-bar{padding:28px 24px;border-bottom:1px solid var(--brd)}
-.footer-logos-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.footer-logos-bar{padding:24px 20px;border-bottom:1px solid var(--brd)}
+.footer-logos-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .footer-logo-main{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .footer-oomus-text{display:flex;flex-direction:column;gap:2px}
 .footer-oomus-name{font-family:var(--od);font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
 .footer-oomus-slogan{font-size:11px;color:var(--ink3);font-style:italic;max-width:260px;line-height:1.4}
-.footer-logos-sep{width:1px;height:36px;background:var(--brd2);flex-shrink:0}
-.footer-logos-partners{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.flogo{height:32px;width:auto;object-fit:contain;max-width:110px;opacity:0.75;transition:opacity 0.15s}
+.footer-logos-sep{width:1px;height:32px;background:var(--brd2);flex-shrink:0}
+.footer-logos-partners{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.flogo{height:30px;width:auto;object-fit:contain;max-width:100px;opacity:0.75;transition:opacity 0.15s}
 .flogo:hover{opacity:1}
-.flogo-main{height:32px;max-width:130px}
+.flogo-main{height:30px;max-width:120px}
 .flogo-fallback{font-family:var(--od);font-size:14px;font-weight:800;color:var(--cyan)}
-.footer-bar{padding:13px 24px}
-.footer-bar-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.footer-bar{padding:12px 20px}
+.footer-bar-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .footer-bar-left{font-size:11px;color:var(--ink3);font-family:var(--om)}
 .footer-bar-left a{color:var(--ink3);text-decoration:none;transition:color 0.15s}
 .footer-bar-left a:hover{color:var(--cyan)}
-.footer-bar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.footer-bar-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .footer-bar-right span,.footer-bar-right a{font-size:11px;color:var(--ink3);text-decoration:none;font-family:var(--om);transition:color 0.15s}
 .footer-bar-right a:hover{color:var(--cyan)}
 .fbsep{color:var(--brd2)}
-@media(max-width:680px){
-  .res-grid{grid-template-columns:1fr;gap:10px}
-  .bulk-badges{grid-template-columns:repeat(2,1fr)}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+
+/* ── Tablette large : 901px–1100px ──────────────── */
+@media(max-width:1100px){
+  .main{padding:0 16px 60px;gap:16px}
+  .hero{padding:36px 16px 24px;gap:24px}
+}
+
+/* ── Tablette : 680px–900px ─────────────────────── */
+@media(max-width:900px){
+  /* Layout 1 colonne */
+  .main{
+    grid-template-columns:1fr;
+    padding:0 16px 60px;
+    gap:0;
+  }
+  /* Sidebar passe en dessous */
+  .sidebar{
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:0;
+  }
+  .sidebar .panel{
+    flex:1 1 280px;
+    margin-bottom:12px;
+  }
+  /* Sécurité grid reste 2 colonnes */
+  .sec-grid{grid-template-columns:1fr 1fr}
+  /* Stats horizontal scroll si trop étroit */
+  .stats-inner{overflow-x:auto}
+}
+
+/* ── Mobile large : 480px–679px ─────────────────── */
+@media(max-width:679px){
+  /* Nav */
+  .nav-i{height:50px;padding:0 14px;gap:8px}
+  .nav-badge{display:none}
+  .nav-sub{display:none}
+  .nav-pipe{display:none}
+  .nav-logo-img{height:24px}
+
+  /* Hero */
+  .hero{
+    grid-template-columns:1fr;
+    padding:24px 14px 18px;
+    gap:0;
+  }
+  .hero-visual{display:none}
+  .hero h1{font-size:clamp(22px,6vw,30px);margin-bottom:10px}
+  .hero-sub{font-size:12px;max-width:100%}
+  .hero-tag{font-size:9px;margin-bottom:10px}
+
+  /* Main */
+  .main{padding:0 14px 48px}
+
+  /* Panel */
+  .panel{border-radius:12px;margin-bottom:12px}
+  .panel-head{padding:12px 14px}
+  .panel-head-label{font-size:12px}
+
+  /* Tabs */
+  .tabs{margin:12px 12px 12px}
+  .tab-btn{font-size:11px;height:32px;gap:5px}
+
+  /* Form */
+  .field-block{padding:0 12px 8px}
+  .code-field{height:46px;font-size:13px}
+  .btn-verify{margin:6px 12px 12px;width:calc(100% - 24px);height:46px;font-size:13px}
+  .input-hint{margin:0 12px 10px;padding:8px 11px}
+  .scan-row{padding:0 12px 12px;gap:7px}
+  .btn-scan{font-size:11px;height:34px}
+
+  /* Bulk */
+  .drop-zone{margin:0 12px 10px;padding:22px 12px}
+  #bulk-progress,#bulk-summary{margin-left:12px;margin-right:12px}
+  .bulk-badges{grid-template-columns:repeat(2,1fr);gap:7px}
+  .bulk-badge-n{font-size:17px}
+  .bulk-actions{padding:0 12px 12px}
+  #bulk-table-wrap{margin:0 12px 12px}
+  .bt{min-width:300px}
+  .bt td.mono{font-size:10px;letter-spacing:0.02em}
+
+  /* Result */
+  .res-head{padding:14px 14px 10px;gap:10px}
+  .res-icon{width:40px;height:40px}
+  .res-icon svg{width:18px;height:18px}
+  .res-title{font-size:15px}
+  .res-body{padding:10px 14px}
+  .res-grid{grid-template-columns:1fr;gap:9px}
+  .res-field .v{font-size:12px}
+
+  /* Sidebar */
+  .sidebar{flex-direction:column}
+  .sidebar .panel{flex:none;width:100%}
+  .sec-grid{grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px 12px}
+  .sec-card{padding:10px 10px}
+  .sec-card-title{font-size:10px}
+  .sec-card-text{font-size:9px}
+
+  /* Footer */
+  .footer-logos-bar{padding:18px 14px}
+  .footer-logos-inner{flex-direction:column;align-items:flex-start;gap:14px}
+  .footer-logos-sep{width:32px;height:1px}
+  .footer-logos-partners{gap:12px}
+  .flogo{height:26px}
+  .footer-bar{padding:10px 14px}
+  .footer-bar-inner{flex-direction:column;align-items:flex-start;gap:6px}
+  .footer-bar-right{flex-wrap:wrap;gap:6px}
+}
+
+/* ── Mobile petit : < 480px ─────────────────────── */
+@media(max-width:479px){
+  .hero h1{font-size:21px}
+  .code-field{font-size:12px;letter-spacing:0.05em;padding:0 12px 0 38px}
+  .input-icon{width:15px;height:15px;left:11px}
+
+  /* Tabs : icône only sur très petit */
+  .tab-btn span{display:none}
+  .tab-btn svg{width:16px;height:16px}
+  .tab-btn{gap:0}
+
+  /* Sécurité : 1 colonne */
   .sec-grid{grid-template-columns:1fr}
-  .footer-logos-inner{flex-direction:column;align-items:flex-start;gap:16px}
-  .footer-logos-sep{width:40px;height:1px}
+
+  /* Badges vérif de masse : 2 colonnes */
+  .bulk-badges{grid-template-columns:repeat(2,1fr)}
+
+  /* Lang switcher plus compact */
+  .lang-btn{padding:0 7px;font-size:10px;height:24px}
+  .nav-badge{padding:3px 8px;font-size:9px}
+}
+
+/* ── Touch : améliorer les zones cliquables ──────── */
+@media(hover:none) and (pointer:coarse){
+  .btn-verify{height:52px;font-size:15px}
+  .btn-scan{height:42px;padding:0 16px}
+  .tab-btn{height:40px}
+  .lang-btn{height:32px;padding:0 12px}
+  .code-field{height:54px;font-size:16px}
+  .btn-export,.btn-reset{height:44px}
+  .btn-close{height:42px;padding:0 22px}
 }
 </style>
 </head>
@@ -413,46 +524,46 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
     <p class="hero-sub" data-i18n="hero_sub">Saisissez le code ou scannez le QR code pour confirmer l'authenticité en temps réel, sans transmission de données vers un serveur.</p>
   </div>
   <div class="hero-visual" aria-hidden="true">
-    <svg class="qr-anim" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <rect width="150" height="150" rx="12" fill="white" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+    <svg class="qr-anim" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+      <rect width="140" height="140" rx="12" fill="white" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
       <g fill="#08BCF1" opacity="0.8">
-        <rect x="11" y="11" width="37" height="37" rx="4" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
-        <rect x="18" y="18" width="23" height="23" rx="2"/>
-        <rect x="102" y="11" width="37" height="37" rx="4" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
-        <rect x="109" y="18" width="23" height="23" rx="2"/>
-        <rect x="11" y="102" width="37" height="37" rx="4" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
-        <rect x="18" y="109" width="23" height="23" rx="2"/>
-        <rect x="57" y="11" width="7" height="7" rx="1"/><rect x="68" y="11" width="7" height="7" rx="1" opacity="0.5"/>
-        <rect x="79" y="11" width="7" height="7" rx="1"/><rect x="57" y="22" width="7" height="7" rx="1" opacity="0.7"/>
-        <rect x="79" y="22" width="7" height="7" rx="1" opacity="0.5"/><rect x="57" y="33" width="7" height="7" rx="1"/>
-        <rect x="68" y="33" width="7" height="7" rx="1" opacity="0.6"/><rect x="79" y="33" width="7" height="7" rx="1"/>
-        <rect x="11" y="57" width="7" height="7" rx="1"/><rect x="22" y="57" width="7" height="7" rx="1" opacity="0.5"/>
-        <rect x="33" y="57" width="7" height="7" rx="1"/><rect x="44" y="57" width="7" height="7" rx="1" opacity="0.7"/>
-        <rect x="57" y="57" width="7" height="7" rx="1"/><rect x="68" y="57" width="7" height="7" rx="1" opacity="0.4"/>
-        <rect x="79" y="57" width="7" height="7" rx="1"/><rect x="90" y="57" width="7" height="7" rx="1" opacity="0.6"/>
-        <rect x="101" y="57" width="7" height="7" rx="1"/><rect x="112" y="57" width="7" height="7" rx="1" opacity="0.5"/>
-        <rect x="123" y="57" width="7" height="7" rx="1"/><rect x="11" y="68" width="7" height="7" rx="1" opacity="0.6"/>
-        <rect x="33" y="68" width="7" height="7" rx="1"/><rect x="57" y="68" width="7" height="7" rx="1" opacity="0.5"/>
-        <rect x="79" y="68" width="7" height="7" rx="1"/><rect x="101" y="68" width="7" height="7" rx="1" opacity="0.4"/>
-        <rect x="123" y="68" width="7" height="7" rx="1"/><rect x="11" y="79" width="7" height="7" rx="1"/>
-        <rect x="22" y="79" width="7" height="7" rx="1" opacity="0.7"/><rect x="44" y="79" width="7" height="7" rx="1"/>
-        <rect x="57" y="79" width="7" height="7" rx="1" opacity="0.5"/><rect x="68" y="79" width="7" height="7" rx="1"/>
-        <rect x="90" y="79" width="7" height="7" rx="1" opacity="0.6"/><rect x="101" y="79" width="7" height="7" rx="1"/>
-        <rect x="123" y="79" width="7" height="7" rx="1" opacity="0.4"/><rect x="57" y="90" width="7" height="7" rx="1"/>
-        <rect x="79" y="90" width="7" height="7" rx="1" opacity="0.5"/><rect x="101" y="90" width="7" height="7" rx="1"/>
-        <rect x="112" y="90" width="7" height="7" rx="1" opacity="0.7"/>
+        <rect x="10" y="10" width="35" height="35" rx="3" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
+        <rect x="17" y="17" width="21" height="21" rx="2"/>
+        <rect x="95" y="10" width="35" height="35" rx="3" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
+        <rect x="102" y="17" width="21" height="21" rx="2"/>
+        <rect x="10" y="95" width="35" height="35" rx="3" fill="none" stroke="#08BCF1" stroke-width="2.5"/>
+        <rect x="17" y="102" width="21" height="21" rx="2"/>
+        <rect x="54" y="10" width="6" height="6" rx="1"/><rect x="63" y="10" width="6" height="6" rx="1" opacity="0.5"/>
+        <rect x="72" y="10" width="6" height="6" rx="1"/><rect x="54" y="19" width="6" height="6" rx="1" opacity="0.7"/>
+        <rect x="72" y="19" width="6" height="6" rx="1" opacity="0.5"/><rect x="54" y="28" width="6" height="6" rx="1"/>
+        <rect x="63" y="28" width="6" height="6" rx="1" opacity="0.6"/><rect x="72" y="28" width="6" height="6" rx="1"/>
+        <rect x="10" y="54" width="6" height="6" rx="1"/><rect x="19" y="54" width="6" height="6" rx="1" opacity="0.5"/>
+        <rect x="28" y="54" width="6" height="6" rx="1"/><rect x="37" y="54" width="6" height="6" rx="1" opacity="0.7"/>
+        <rect x="54" y="54" width="6" height="6" rx="1"/><rect x="63" y="54" width="6" height="6" rx="1" opacity="0.4"/>
+        <rect x="72" y="54" width="6" height="6" rx="1"/><rect x="81" y="54" width="6" height="6" rx="1" opacity="0.6"/>
+        <rect x="90" y="54" width="6" height="6" rx="1"/><rect x="99" y="54" width="6" height="6" rx="1" opacity="0.5"/>
+        <rect x="108" y="54" width="6" height="6" rx="1"/><rect x="10" y="63" width="6" height="6" rx="1" opacity="0.6"/>
+        <rect x="28" y="63" width="6" height="6" rx="1"/><rect x="54" y="63" width="6" height="6" rx="1" opacity="0.5"/>
+        <rect x="72" y="63" width="6" height="6" rx="1"/><rect x="90" y="63" width="6" height="6" rx="1" opacity="0.4"/>
+        <rect x="108" y="63" width="6" height="6" rx="1"/><rect x="10" y="72" width="6" height="6" rx="1"/>
+        <rect x="19" y="72" width="6" height="6" rx="1" opacity="0.7"/><rect x="37" y="72" width="6" height="6" rx="1"/>
+        <rect x="54" y="72" width="6" height="6" rx="1" opacity="0.5"/><rect x="63" y="72" width="6" height="6" rx="1"/>
+        <rect x="81" y="72" width="6" height="6" rx="1" opacity="0.6"/><rect x="90" y="72" width="6" height="6" rx="1"/>
+        <rect x="108" y="72" width="6" height="6" rx="1" opacity="0.4"/><rect x="54" y="81" width="6" height="6" rx="1"/>
+        <rect x="72" y="81" width="6" height="6" rx="1" opacity="0.5"/><rect x="90" y="81" width="6" height="6" rx="1"/>
+        <rect x="99" y="81" width="6" height="6" rx="1" opacity="0.7"/>
       </g>
       <g class="scan-line-g">
-        <line x1="7" y1="0" x2="143" y2="0" stroke="#08BCF1" stroke-width="2" class="scan-line"/>
-        <rect x="7" y="-5" width="136" height="10" rx="2" fill="url(#sg)" class="scan-glow-rect" opacity="0.35"/>
+        <line x1="6" y1="0" x2="134" y2="0" stroke="#08BCF1" stroke-width="2" class="scan-line"/>
+        <rect x="6" y="-5" width="128" height="10" rx="2" fill="url(#sg)" class="scan-glow-rect" opacity="0.35"/>
       </g>
       <g stroke="#08BCF1" stroke-width="2.5" fill="none" opacity="0.6">
-        <path d="M7,22 L7,7 L22,7"/><path d="M128,7 L143,7 L143,22"/>
-        <path d="M7,128 L7,143 L22,143"/><path d="M143,128 L143,143 L128,143"/>
+        <path d="M6,20 L6,6 L20,6"/><path d="M120,6 L134,6 L134,20"/>
+        <path d="M6,120 L6,134 L20,134"/><path d="M134,120 L134,134 L120,134"/>
       </g>
       <g class="verified-badge">
-        <rect x="40" y="60" width="70" height="30" rx="15" fill="#047857" opacity="0.12" stroke="#047857" stroke-width="1"/>
-        <text x="75" y="79" text-anchor="middle" font-family="'Onest',sans-serif" font-size="11" font-weight="700" fill="#047857">✓ VALID</text>
+        <rect x="37" y="56" width="66" height="28" rx="14" fill="#047857" opacity="0.12" stroke="#047857" stroke-width="1"/>
+        <text x="70" y="74" text-anchor="middle" font-family="'Onest',sans-serif" font-size="10" font-weight="700" fill="#047857">✓ VALID</text>
       </g>
       <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#08BCF1" stop-opacity="0.6"/><stop offset="100%" stop-color="#08BCF1" stop-opacity="0"/></linearGradient></defs>
     </svg>
@@ -461,7 +572,6 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
 
 <div class="main">
 
-  <!-- LEFT : vérification -->
   <div>
     <div class="panel">
       <div class="panel-head">
@@ -471,7 +581,6 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
         <span class="panel-head-label" data-i18n="panel_verif">Vérification de carte</span>
         <div class="panel-live-dot"></div>
       </div>
-
       <div class="tabs">
         <button class="tab-btn active" id="tab-single" onclick="switchTab('single')">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -559,10 +668,7 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
     <div id="result"></div>
   </div>
 
-  <!-- RIGHT : sidebar -->
   <div class="sidebar">
-
-    <!-- Statistiques campagne — toujours visible -->
     <div class="panel" id="stats-card">
       <div class="panel-head">
         <div class="panel-head-icon ph-green">
@@ -576,7 +682,6 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
       </div>
     </div>
 
-    <!-- Architecture sécurité -->
     <div class="panel">
       <div class="panel-head">
         <div class="panel-head-icon ph-purple">
@@ -587,40 +692,30 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
       </div>
       <div class="sec-grid">
         <div class="sec-card">
-          <div class="sec-card-icon sci-cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          </div>
+          <div class="sec-card-icon sci-cyan"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
           <div class="sec-card-title" data-i18n="sec1_title">Vérification offline</div>
           <div class="sec-card-text" data-i18n="sec1_text">SHA-256 via WebCrypto API native. Aucune donnée envoyée.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon sci-purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
+          <div class="sec-card-icon sci-purple"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
           <div class="sec-card-title" data-i18n="sec2_title">Audit blockchain</div>
           <div class="sec-card-text" data-i18n="sec2_text">Hash-linking SHA-256. Toute falsification est détectable.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon sci-amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9C11.18 3.77 5.84 1.75 3.8 3.8c-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.53 9.87 6.55 11.9 4.5z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.05-7.36-.03-11.9 4.5"/></svg>
-          </div>
+          <div class="sec-card-icon sci-amber"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9C11.18 3.77 5.84 1.75 3.8 3.8c-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.53 9.87 6.55 11.9 4.5z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.05-7.36-.03-11.9 4.5"/></svg></div>
           <div class="sec-card-title" data-i18n="sec3_title">Détection AI</div>
           <div class="sec-card-text" data-i18n="sec3_text">IsolationForest analyse les patterns de génération.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon sci-green">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
+          <div class="sec-card-icon sci-green"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
           <div class="sec-card-title" data-i18n="sec4_title">Registre public</div>
-          <div class="sec-card-text" data-i18n="sec4_text">SHA-256(code) uniquement. Les codes originaux ne sont jamais exposés.</div>
+          <div class="sec-card-text" data-i18n="sec4_text">SHA-256(code) uniquement. Codes originaux jamais exposés.</div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- Modal scanner -->
 <div id="scan-modal" onclick="handleModalClick(event)">
   <div class="scan-box">
     <div class="scan-title" data-i18n="scan_title">Scanner le QR code</div>
@@ -630,7 +725,6 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
   <div class="footer-logos-bar">
     <div class="footer-logos-inner">
@@ -664,152 +758,27 @@ footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid va
 
 <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <script>
-// ═══════════════════════════════════════════════════════════
-// I18N
-// ═══════════════════════════════════════════════════════════
-const LANG = {
-  fr: {
-    nav_badge:"Portail de vérification", hero_tag:"Portail officiel · Oomus DPI",
-    hero_title:"Vérifiez l'authenticité<br>de votre <span class='hl'>carte digitale</span>",
-    hero_sub:"Saisissez le code ou scannez le QR code pour confirmer l'authenticité en temps réel, sans transmission de données vers un serveur.",
-    panel_verif:"Vérification de carte",
-    tab_single:"Code unique", tab_bulk:"Masse",
-    field_label:"Code de la carte", field_ph:"ex : SN-FI1Q9NR5 · CPS-4T4MVWIG",
-    btn_verify:"Vérifier l'authenticité", hint_text:"FORMAT — PREFIX (2–8 lettres) + tiret + 8 caractères Base36. Non sensible à la casse.",
-    btn_scan:"Scanner le QR code",
-    drop_title:"Déposer ALL_QRCODES.txt", drop_sub:"ou <strong>cliquer pour sélectionner</strong>",
-    prog_lbl:"Analyse en cours…",
-    bs_tot:"Total", bs_ok:"Valides", bs_wn:"Utilisés", bs_er:"Invalides",
-    btn_export:"Exporter CSV", btn_reset:"Réinitialiser",
-    th_code:"Code", th_status:"Statut", th_lot:"Lot", th_date:"Date",
-    loading:"Vérification cryptographique…",
-    stats_title:"Statistiques campagne", stats_loading:"Chargement du registre…",
-    s_total:"Total émis", s_active:"Actifs", s_used:"Utilisés", s_revoked:"Révoqués",
-    sec_title:"Architecture sécurité",
-    sec1_title:"Vérification offline", sec1_text:"SHA-256 via WebCrypto API native. Aucune donnée envoyée.",
-    sec2_title:"Audit blockchain", sec2_text:"Hash-linking SHA-256. Toute falsification est détectable.",
-    sec3_title:"Détection AI", sec3_text:"IsolationForest analyse les patterns de génération.",
-    sec4_title:"Registre public", sec4_text:"SHA-256(code) uniquement. Codes originaux jamais exposés.",
-    scan_title:"Scanner le QR code", scan_sub:"ISO/IEC 18004 · Caméra arrière recommandée", btn_close:"Fermer",
-    res_campaign:"Campagne", res_country:"Pays", res_lot:"Lot d'émission", res_date:"Date d'émission",
-    res_hash:"Empreinte d'intégrité SHA-256", res_verified:"Vérifié le",
-    res_active_title:"Carte digitale authentique", res_active_desc:"Cette carte est valide et active dans le registre cryptographique. Elle peut être utilisée pour cette campagne sanitaire.",
-    res_used_title:"Carte déjà utilisée", res_used_desc:"Cette carte a déjà été enregistrée pour un bénéficiaire et ne peut plus être présentée une seconde fois.",
-    res_revoked_title:"Carte révoquée", res_revoked_desc:"Cette carte a été révoquée et n'est plus valide. Contactez le responsable de la campagne de votre district.",
-    res_unknown_title:"Code introuvable", res_unknown_desc:"Ce code n'existe pas dans le registre officiel. Vérifiez la saisie ou contactez le responsable de district.",
-    stlb_active:"ACTIF", stlb_used:"UTILISÉ", stlb_revoked:"RÉVOQUÉ", stlb_unknown:"INCONNU",
-    bulk_valid:"Valide", bulk_used:"Utilisé", bulk_revoked:"Révoqué", bulk_notfound:"Introuvable",
-  },
-  en: {
-    nav_badge:"Verification Portal", hero_tag:"Official portal · Oomus DPI",
-    hero_title:"Verify the authenticity<br>of your <span class='hl'>digital card</span>",
-    hero_sub:"Enter the code or scan the QR code to confirm authenticity in real time, with no data sent to a server.",
-    panel_verif:"Card Verification",
-    tab_single:"Single code", tab_bulk:"Bulk",
-    field_label:"Card code", field_ph:"e.g. SN-FI1Q9NR5 · CPS-4T4MVWIG",
-    btn_verify:"Verify authenticity", hint_text:"FORMAT — PREFIX (2–8 letters) + dash + 8 Base36 characters. Case insensitive.",
-    btn_scan:"Scan QR code",
-    drop_title:"Drop ALL_QRCODES.txt here", drop_sub:"or <strong>click to select</strong>",
-    prog_lbl:"Processing…",
-    bs_tot:"Total", bs_ok:"Valid", bs_wn:"Used", bs_er:"Invalid",
-    btn_export:"Export CSV", btn_reset:"Reset",
-    th_code:"Code", th_status:"Status", th_lot:"Batch", th_date:"Date",
-    loading:"Cryptographic verification…",
-    stats_title:"Campaign statistics", stats_loading:"Loading registry…",
-    s_total:"Total issued", s_active:"Active", s_used:"Used", s_revoked:"Revoked",
-    sec_title:"Security architecture",
-    sec1_title:"Offline verification", sec1_text:"SHA-256 via native WebCrypto API. No data sent.",
-    sec2_title:"Blockchain audit", sec2_text:"SHA-256 hash-linking. Any tampering is detectable.",
-    sec3_title:"AI detection", sec3_text:"IsolationForest monitors generation patterns.",
-    sec4_title:"Public registry", sec4_text:"SHA-256(code) only. Original codes never exposed.",
-    scan_title:"Scan QR code", scan_sub:"ISO/IEC 18004 · Rear camera recommended", btn_close:"Close",
-    res_campaign:"Campaign", res_country:"Country", res_lot:"Batch", res_date:"Issue date",
-    res_hash:"SHA-256 integrity fingerprint", res_verified:"Verified on",
-    res_active_title:"Authentic digital card", res_active_desc:"This card is valid and active in the cryptographic registry. It can be used for this health campaign.",
-    res_used_title:"Card already used", res_used_desc:"This card has already been registered for a beneficiary and cannot be presented a second time.",
-    res_revoked_title:"Card revoked", res_revoked_desc:"This card has been revoked and is no longer valid. Contact your district campaign manager.",
-    res_unknown_title:"Code not found", res_unknown_desc:"This code does not exist in the official campaign registry. Check your input or contact your district manager.",
-    stlb_active:"ACTIVE", stlb_used:"USED", stlb_revoked:"REVOKED", stlb_unknown:"UNKNOWN",
-    bulk_valid:"Valid", bulk_used:"Used", bulk_revoked:"Revoked", bulk_notfound:"Not found",
-  }
-};
-
-let currentLang = 'fr';
-
-function t(key) { return LANG[currentLang][key] || LANG.fr[key] || key; }
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.setAttribute('lang', lang);
-  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
-  document.getElementById('btn-en').classList.toggle('active', lang==='en');
-  // Update all data-i18n elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    el.innerHTML = t(key);
-  });
-  // Update placeholders
-  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-    el.placeholder = t(el.getAttribute('data-i18n-ph'));
-  });
-  // Re-draw stats if loaded
-  if (reg) drawStats();
-  // Update page title
-  document.title = lang === 'en'
-    ? 'Card Verification — Oomus eHealth CampaignID'
-    : 'Vérification Carte Digitale — Oomus eHealth CampaignID';
+const LANG={fr:{nav_badge:"Portail de vérification",hero_tag:"Portail officiel · Oomus DPI",hero_title:"Vérifiez l'authenticité<br>de votre <span class='hl'>carte digitale</span>",hero_sub:"Saisissez le code ou scannez le QR code pour confirmer l'authenticité en temps réel, sans transmission de données vers un serveur.",panel_verif:"Vérification de carte",tab_single:"Code unique",tab_bulk:"Masse",field_label:"Code de la carte",field_ph:"ex : SN-FI1Q9NR5 · CPS-4T4MVWIG",btn_verify:"Vérifier l'authenticité",hint_text:"FORMAT — PREFIX (2–8 lettres) + tiret + 8 caractères Base36. Non sensible à la casse.",btn_scan:"Scanner le QR code",drop_title:"Déposer ALL_QRCODES.txt",drop_sub:"ou <strong>cliquer pour sélectionner</strong>",prog_lbl:"Analyse en cours…",bs_tot:"Total",bs_ok:"Valides",bs_wn:"Utilisés",bs_er:"Invalides",btn_export:"Exporter CSV",btn_reset:"Réinitialiser",th_code:"Code",th_status:"Statut",th_lot:"Lot",th_date:"Date",loading:"Vérification cryptographique…",stats_title:"Statistiques campagne",stats_loading:"Chargement du registre…",s_total:"Total émis",s_active:"Actifs",s_used:"Utilisés",s_revoked:"Révoqués",sec_title:"Architecture sécurité",sec1_title:"Vérification offline",sec1_text:"SHA-256 via WebCrypto API native. Aucune donnée envoyée.",sec2_title:"Audit blockchain",sec2_text:"Hash-linking SHA-256. Toute falsification est détectable.",sec3_title:"Détection AI",sec3_text:"IsolationForest analyse les patterns de génération.",sec4_title:"Registre public",sec4_text:"SHA-256(code) uniquement. Codes originaux jamais exposés.",scan_title:"Scanner le QR code",scan_sub:"ISO/IEC 18004 · Caméra arrière recommandée",btn_close:"Fermer",res_campaign:"Campagne",res_country:"Pays",res_lot:"Lot d'émission",res_date:"Date d'émission",res_hash:"Empreinte d'intégrité SHA-256",res_verified:"Vérifié le",res_active_title:"Carte digitale authentique",res_active_desc:"Cette carte est valide et active dans le registre cryptographique. Elle peut être utilisée pour cette campagne sanitaire.",res_used_title:"Carte déjà utilisée",res_used_desc:"Cette carte a déjà été enregistrée pour un bénéficiaire et ne peut plus être présentée une seconde fois.",res_revoked_title:"Carte révoquée",res_revoked_desc:"Cette carte a été révoquée et n'est plus valide. Contactez le responsable de la campagne de votre district.",res_unknown_title:"Code introuvable",res_unknown_desc:"Ce code n'existe pas dans le registre officiel. Vérifiez la saisie ou contactez le responsable de district.",stlb_active:"ACTIF",stlb_used:"UTILISÉ",stlb_revoked:"RÉVOQUÉ",stlb_unknown:"INCONNU",bulk_valid:"Valide",bulk_used:"Utilisé",bulk_revoked:"Révoqué",bulk_notfound:"Introuvable"},en:{nav_badge:"Verification Portal",hero_tag:"Official portal · Oomus DPI",hero_title:"Verify the authenticity<br>of your <span class='hl'>digital card</span>",hero_sub:"Enter the code or scan the QR code to confirm authenticity in real time, with no data sent to a server.",panel_verif:"Card Verification",tab_single:"Single code",tab_bulk:"Bulk",field_label:"Card code",field_ph:"e.g. SN-FI1Q9NR5 · CPS-4T4MVWIG",btn_verify:"Verify authenticity",hint_text:"FORMAT — PREFIX (2–8 letters) + dash + 8 Base36 characters. Case insensitive.",btn_scan:"Scan QR code",drop_title:"Drop ALL_QRCODES.txt here",drop_sub:"or <strong>click to select</strong>",prog_lbl:"Processing…",bs_tot:"Total",bs_ok:"Valid",bs_wn:"Used",bs_er:"Invalid",btn_export:"Export CSV",btn_reset:"Reset",th_code:"Code",th_status:"Status",th_lot:"Batch",th_date:"Date",loading:"Cryptographic verification…",stats_title:"Campaign statistics",stats_loading:"Loading registry…",s_total:"Total issued",s_active:"Active",s_used:"Used",s_revoked:"Revoked",sec_title:"Security architecture",sec1_title:"Offline verification",sec1_text:"SHA-256 via native WebCrypto API. No data sent.",sec2_title:"Blockchain audit",sec2_text:"SHA-256 hash-linking. Any tampering is detectable.",sec3_title:"AI detection",sec3_text:"IsolationForest monitors generation patterns.",sec4_title:"Public registry",sec4_text:"SHA-256(code) only. Original codes never exposed.",scan_title:"Scan QR code",scan_sub:"ISO/IEC 18004 · Rear camera recommended",btn_close:"Close",res_campaign:"Campaign",res_country:"Country",res_lot:"Batch",res_date:"Issue date",res_hash:"SHA-256 integrity fingerprint",res_verified:"Verified on",res_active_title:"Authentic digital card",res_active_desc:"This card is valid and active in the cryptographic registry. It can be used for this health campaign.",res_used_title:"Card already used",res_used_desc:"This card has already been registered for a beneficiary and cannot be presented a second time.",res_revoked_title:"Card revoked",res_revoked_desc:"This card has been revoked and is no longer valid. Contact your district campaign manager.",res_unknown_title:"Code not found",res_unknown_desc:"This code does not exist in the official campaign registry. Check your input or contact your district manager.",stlb_active:"ACTIVE",stlb_used:"USED",stlb_revoked:"REVOKED",stlb_unknown:"UNKNOWN",bulk_valid:"Valid",bulk_used:"Used",bulk_revoked:"Revoked",bulk_notfound:"Not found"}};
+let currentLang='fr';
+function t(k){return LANG[currentLang][k]||LANG.fr[k]||k}
+function setLang(lang){
+  currentLang=lang;
+  document.documentElement.setAttribute('lang',lang);
+  document.getElementById('btn-fr').classList.toggle('active',lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.getAttribute('data-i18n')));
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>el.placeholder=t(el.getAttribute('data-i18n-ph')));
+  if(reg)drawStats();
+  document.title=lang==='en'?'Card Verification — Oomus eHealth CampaignID':'Vérification Carte Digitale — Oomus eHealth CampaignID';
 }
-
-// ═══════════════════════════════════════════════════════════
-// CONFIG
-// ═══════════════════════════════════════════════════════════
-const CFG = {
-  registryUrl: "data/registry.json",
-  campaign:    "CPS 2026 — Chimio-Prévention du Paludisme Saisonnier",
-  country:     "Sénégal",
-};
-
-let reg = null, scanner = null, scanOpen = false, bulkResults = [];
-
-async function loadReg() {
-  if (reg) return reg;
-  try {
-    const r = await fetch(CFG.registryUrl + "?v=" + Date.now());
-    reg = await r.json();
-    drawStats();
-    return reg;
-  } catch(e) { return {}; }
-}
-
-async function sha256(t) {
-  const b = new TextEncoder().encode(t);
-  const h = await crypto.subtle.digest("SHA-256", b);
-  return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("");
-}
-
-function switchTab(tab) {
-  ["single","bulk"].forEach(t=>{
-    document.getElementById("tab-"+t).classList.toggle("active",t===tab);
-    document.getElementById("panel-"+t).classList.toggle("active",t===tab);
-  });
-  if(tab==="bulk")clrRes();
-}
-
-async function verify(ov) {
-  const inp = document.getElementById("ci");
-  const raw = (ov||inp.value).trim().toUpperCase();
-  if(!raw){inp.focus();return}
-  if(ov)inp.value=ov;
-  setLoad(true);clrRes();
-  const r = await loadReg();
-  const key = await sha256(raw);
-  const rec = r[key]||null;
-  setLoad(false);
-  drawRes(raw,rec);
-}
-
+const CFG={registryUrl:"data/registry.json",campaign:"CPS 2026 — Chimio-Prévention du Paludisme Saisonnier",country:"Sénégal"};
+let reg=null,scanner=null,scanOpen=false,bulkResults=[];
+async function loadReg(){if(reg)return reg;try{const r=await fetch(CFG.registryUrl+"?v="+Date.now());reg=await r.json();drawStats();return reg}catch(e){return{}}}
+async function sha256(t){const b=new TextEncoder().encode(t);const h=await crypto.subtle.digest("SHA-256",b);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("")}
+function switchTab(tab){["single","bulk"].forEach(t=>{document.getElementById("tab-"+t).classList.toggle("active",t===tab);document.getElementById("panel-"+t).classList.toggle("active",t===tab)});if(tab==="bulk")clrRes()}
+async function verify(ov){const inp=document.getElementById("ci");const raw=(ov||inp.value).trim().toUpperCase();if(!raw){inp.focus();return}if(ov)inp.value=ov;setLoad(true);clrRes();const r=await loadReg();const key=await sha256(raw);const rec=r[key]||null;setLoad(false);drawRes(raw,rec)}
 function drawRes(code,rec){
-  const el = document.getElementById("result");
+  const el=document.getElementById("result");
   const cs=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>`;
   const xs=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
   const as=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg>`;
@@ -826,27 +795,9 @@ function drawRes(code,rec){
   const ia=rec&&rec.issued_at?new Date(rec.issued_at).toLocaleDateString(currentLang==="fr"?"fr-FR":"en-GB",{day:"2-digit",month:"long",year:"numeric"}):"—";
   const lot=rec&&rec.batch_id?"LOT "+String(rec.batch_id).padStart(4,"0"):"—";
   const now=new Date().toLocaleString(currentLang==="fr"?"fr-FR":"en-GB",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
-  el.innerHTML=`<div class="res-panel">
-    <div class="res-head ${sc}">
-      <div class="res-icon">${ic}</div>
-      <div class="res-text"><div class="res-title">${title}</div><div class="res-desc">${desc}</div></div>
-    </div>
-    <div class="res-body">
-      <div class="res-grid">
-        <div class="res-field"><label>Code</label><div class="v mono">${code}</div></div>
-        <div class="res-field"><label>${t("th_status")}</label><div class="v"><span class="badge ${bc}">${stlb}</span></div></div>
-        <div class="res-field"><label>${t("res_campaign")}</label><div class="v">${CFG.campaign}</div></div>
-        <div class="res-field"><label>${t("res_country")}</label><div class="v">${CFG.country}</div></div>
-        <div class="res-field"><label>${t("res_lot")}</label><div class="v">${lot}</div></div>
-        <div class="res-field"><label>${t("res_date")}</label><div class="v">${ia}</div></div>
-      </div>
-      ${rec&&rec.hash_sha256?`<div class="hash-block"><div class="hash-lbl">${t("res_hash")}</div><div class="hash-val"><strong>${rec.hash_sha256.slice(0,32)}</strong>${rec.hash_sha256.slice(32)}</div></div>`:""}
-      <div class="res-ts">${t("res_verified")} ${now} · WebCrypto SHA-256</div>
-    </div>
-  </div>`;
+  el.innerHTML=`<div class="res-panel"><div class="res-head ${sc}"><div class="res-icon">${ic}</div><div class="res-text"><div class="res-title">${title}</div><div class="res-desc">${desc}</div></div></div><div class="res-body"><div class="res-grid"><div class="res-field"><label>Code</label><div class="v mono">${code}</div></div><div class="res-field"><label>${t("th_status")}</label><div class="v"><span class="badge ${bc}">${stlb}</span></div></div><div class="res-field"><label>${t("res_campaign")}</label><div class="v">${CFG.campaign}</div></div><div class="res-field"><label>${t("res_country")}</label><div class="v">${CFG.country}</div></div><div class="res-field"><label>${t("res_lot")}</label><div class="v">${lot}</div></div><div class="res-field"><label>${t("res_date")}</label><div class="v">${ia}</div></div></div>${rec&&rec.hash_sha256?`<div class="hash-block"><div class="hash-lbl">${t("res_hash")}</div><div class="hash-val"><strong>${rec.hash_sha256.slice(0,32)}</strong>${rec.hash_sha256.slice(32)}</div></div>`:""}<div class="res-ts">${t("res_verified")} ${now} · WebCrypto SHA-256</div></div></div>`;
   el.className="on";el.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
-
 function drawStats(){
   if(!reg)return;
   const v=Object.values(reg),tot=v.length;
@@ -855,58 +806,32 @@ function drawStats(){
   const rev=v.filter(x=>x.status==="REVOKED").length;
   const pct=n=>tot?Math.round(n/tot*100):0;
   const fmt=n=>n.toLocaleString(currentLang==="fr"?"fr-FR":"en-US");
-  document.getElementById("stats-list").innerHTML=`
-    <div class="stat-item">
-      <div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--ink3)"></span>${t("s_total")}</span><span class="stat-val">${fmt(tot)}</span></div>
-      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%;background:var(--ink3)"></div></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--green)"></span>${t("s_active")}</span><span class="stat-val">${fmt(act)}</span></div>
-      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(act)}%;background:var(--green)"></div></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--cyan)"></span>${t("s_used")}</span><span class="stat-val">${fmt(use)}</span></div>
-      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(use)}%;background:var(--cyan)"></div></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--red)"></span>${t("s_revoked")}</span><span class="stat-val">${fmt(rev)}</span></div>
-      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(rev)}%;background:var(--red)"></div></div>
-    </div>`;
+  document.getElementById("stats-list").innerHTML=`<div class="stat-item"><div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--ink3)"></span>${t("s_total")}</span><span class="stat-val">${fmt(tot)}</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%;background:var(--ink3)"></div></div></div><div class="stat-item"><div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--green)"></span>${t("s_active")}</span><span class="stat-val">${fmt(act)}</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(act)}%;background:var(--green)"></div></div></div><div class="stat-item"><div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--cyan)"></span>${t("s_used")}</span><span class="stat-val">${fmt(use)}</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(use)}%;background:var(--cyan)"></div></div></div><div class="stat-item"><div class="stat-row-top"><span class="stat-label"><span class="stat-dot" style="background:var(--red)"></span>${t("s_revoked")}</span><span class="stat-val">${fmt(rev)}</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct(rev)}%;background:var(--red)"></div></div></div>`;
 }
-
 function setLoad(on){document.getElementById("loader").className=on?"on":"";document.getElementById("bv").disabled=on}
 function clrRes(){const e=document.getElementById("result");e.className="";e.innerHTML=""}
 document.getElementById("ci").addEventListener("keydown",e=>{if(e.key==="Enter")verify()});
-
 const dz=document.getElementById("drop-zone");
 dz.addEventListener("dragover",e=>{e.preventDefault();dz.classList.add("drag-over")});
 dz.addEventListener("dragleave",()=>dz.classList.remove("drag-over"));
 dz.addEventListener("drop",e=>{e.preventDefault();dz.classList.remove("drag-over");const f=e.dataTransfer.files[0];if(f)processBulkFile(f)});
 function handleBulkFile(e){const f=e.target.files[0];if(f)processBulkFile(f)}
-
 async function processBulkFile(file){
   const text=await file.text();
   const lines=text.split(/\r?\n/).map(l=>l.trim()).filter(l=>l&&!l.startsWith("#"));
   if(!lines.length){alert(currentLang==="fr"?"Fichier vide.":"Empty file.");return}
   resetBulk(false);bulkResults=[];
-  const prog=document.getElementById("bulk-progress");
-  const fill=document.getElementById("bulk-prog-fill");
-  const lbl=document.getElementById("bulk-prog-lbl");
-  const cnt=document.getElementById("bulk-prog-cnt");
+  const prog=document.getElementById("bulk-progress"),fill=document.getElementById("bulk-prog-fill"),lbl=document.getElementById("bulk-prog-lbl"),cnt=document.getElementById("bulk-prog-cnt");
   prog.className="on";
   const r=await loadReg();
-  const tbody=document.getElementById("bulk-tbody");
-  tbody.innerHTML="";
+  const tbody=document.getElementById("bulk-tbody");tbody.innerHTML="";
   document.getElementById("bulk-table-wrap").className="on";
   let active=0,used=0,invalid=0;
   const CHUNK=50;
   for(let i=0;i<lines.length;i+=CHUNK){
     const chunk=lines.slice(i,i+CHUNK);
     await Promise.all(chunk.map(async(rawCode,ci)=>{
-      const idx=i+ci;
-      const code=rawCode.toUpperCase();
-      const key=await sha256(code);
-      const rec=r[key]||null;
+      const idx=i+ci,code=rawCode.toUpperCase(),key=await sha256(code),rec=r[key]||null;
       const st=rec?rec.status:"UNKNOWN";
       const lot=rec&&rec.batch_id?"LOT "+String(rec.batch_id).padStart(4,"0"):"—";
       const ia=rec&&rec.issued_at?new Date(rec.issued_at).toLocaleDateString(currentLang==="fr"?"fr-FR":"en-GB",{day:"2-digit",month:"2-digit",year:"numeric"}):"—";
@@ -918,10 +843,9 @@ async function processBulkFile(file){
       tr.innerHTML=`<td class="dim">${idx+1}</td><td class="mono">${code}</td><td><span class="badge ${bc}">${stlb}</span></td><td class="dim">${lot}</td><td class="dim">${ia}</td>`;
       tbody.appendChild(tr);
     }));
-    const done=Math.min(i+CHUNK,lines.length);
-    const pct=Math.round(done/lines.length*100);
+    const done=Math.min(i+CHUNK,lines.length),pct=Math.round(done/lines.length*100);
     fill.style.width=pct+"%";cnt.textContent=done+" / "+lines.length;
-    lbl.textContent=pct<100?t("prog_lbl"):t("btn_reset").includes("R")?"Done":"Terminé";
+    lbl.textContent=pct<100?t("prog_lbl"):(currentLang==="fr"?"Terminé":"Done");
     await new Promise(res=>setTimeout(res,0));
   }
   document.getElementById("bs-tot").textContent=lines.length.toLocaleString();
@@ -931,7 +855,6 @@ async function processBulkFile(file){
   document.getElementById("bulk-summary").className="on";
   document.getElementById("bulk-actions").style.display="flex";
 }
-
 function exportCSV(){
   if(!bulkResults.length)return;
   const hdr=`#,${t("th_code")},${t("th_status")},${t("th_lot")},${t("th_date")}\n`;
@@ -940,7 +863,6 @@ function exportCSV(){
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download=`verification_${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(url);
 }
-
 function resetBulk(rf=true){
   bulkResults=[];
   document.getElementById("bulk-progress").className="";
@@ -951,20 +873,17 @@ function resetBulk(rf=true){
   document.getElementById("bulk-tbody").innerHTML="";
   if(rf){const fi=document.getElementById("bulk-file");if(fi)fi.value=""}
 }
-
 function openScan(){
   document.getElementById("scan-modal").classList.add("open");
   document.body.style.overflow="hidden";scanOpen=true;
   scanner=new Html5Qrcode("qr-reader");
-  scanner.start({facingMode:"environment"},{fps:10,qrbox:{width:210,height:210}},text=>{
+  scanner.start({facingMode:"environment"},{fps:10,qrbox:{width:200,height:200}},text=>{
     let code=text;try{const u=new URL(text);const p=u.pathname.split("/");code=p[p.length-1]||text}catch(_){}
     closeScan();verify(code);
   },()=>{}).catch(()=>{document.querySelector(".scan-sub").textContent=currentLang==="fr"?"Caméra indisponible.":"Camera unavailable."});
 }
 function closeScan(){if(scanner){scanner.stop().catch(()=>{});scanner=null}document.getElementById("scan-modal").classList.remove("open");document.body.style.overflow="";scanOpen=false}
 function handleModalClick(e){if(e.target===document.getElementById("scan-modal"))closeScan()}
-
-// Init placeholder + load
 document.getElementById("ci").placeholder=t("field_ph");
 loadReg();
 </script>
